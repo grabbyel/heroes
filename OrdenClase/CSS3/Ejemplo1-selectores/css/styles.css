@@ -1,0 +1,84 @@
+/* Todos los campos deshabilitados se mostraran en rojo */
+input:disabled{
+    color: red;
+}
+
+/* Los campos de checkbox que se han seleccionado,
+   mostrar la etiqueta en verde y negrita */
+/* el operador +: selector adyacente -> aplica el estilo al elemento
+   que esta al lado del checkbox */
+input[type=checkbox]:checked + label{
+    color: green;
+    font-weight: bold;
+}
+
+/* El elemento que adquiera el foco, un borde naranja
+   funciona con radio y checkbox */
+input:focus + label{
+    border: thin solid coral;
+}
+
+/* Para las cajas de texto, funciona asi*/
+input:focus{
+    border: thin solid coral;
+    outline: none;
+}
+
+/* de ol seleccionar todos los nombres que comienzan por P, ponerlos de fondo amarillo */
+ol li[id^="P"]{
+    background-color: yellow;
+    width: fit-content;
+}
+
+
+/* de ol seleccionar todos los nombres que terminan por e o E, ponerlos de fondo aqua */
+ol li[id$="e"], ol li[id$="E"]{
+    background-color: aqua;
+    width: fit-content;
+}
+
+/* Otra forma */
+ol li:is([id$="e"], [id$="E"]){
+    background-color: aqua;
+    width: fit-content;
+}
+
+/* de ol seleccionar todos los nombres que empiezen por P y terminen por a, ponerlos de fondo greenyellow */
+ol li:is([id^="P"][id$="a"]){
+    background-color: greenyellow;
+    width: fit-content;
+}
+
+/* de ol seleccionar todos los nombres que contienen t, ponerlos de fondo hotpink */
+ol li[id*="t"]{
+    background-color: hotpink;
+    width: fit-content;
+}
+
+ul li:first-child{
+    background-color: yellow;
+    width: fit-content;
+}
+
+ul li:last-child{
+    background-color: pink;
+    width: fit-content;
+}
+
+/* Tabla cebreada por filas */
+#tabla1 tr:nth-child(odd){  /*impar*/
+    background-color: beige;
+}
+
+#tabla1 tr:nth-child(even){  /*par*/
+    background-color: rgb(206, 206, 153);
+}
+
+/* En la tabla2 tabla cebreada por columnas */
+#tabla2 th:nth-child(odd), #tabla2 td:nth-child(odd){  /*impar*/
+    background-color: beige;
+}
+
+#tabla2 th:nth-child(even), #tabla2 td:nth-child(even){  /*par*/
+    background-color: rgb(206, 206, 153);
+}

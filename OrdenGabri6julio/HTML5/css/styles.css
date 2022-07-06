@@ -1,0 +1,49 @@
+body {
+	margin: 20px;
+	background-color: beige;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#contenido {
+	width: 980px;
+	margin: 0 auto;
+}
+
+header {
+	width: 980px;
+	height: 120px;
+	background-color: lightpink;
+}
+
+h1 {
+	text-align: center;
+}
+
+nav {
+	background-color: black;
+	color: beige;
+	float: left;
+	width: 980px;
+}
+
+section {
+	width: 200px;
+}
+
+footer {
+	width: 980px;
+	height: 60px;
+	background-color: lightpink;
+}
+
+footer p {
+	text-align: right;
+}
+
+footer #autor {
+	text-align: center;
+}
+
+.rojo {
+	color: red;
+}

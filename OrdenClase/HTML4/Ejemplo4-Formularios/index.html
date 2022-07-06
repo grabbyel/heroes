@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- GET; los datos del formulario viajan como parametros de la peticion.
+                  url?param1=value1&param2=value2....
+                  solo para consultas (idempotentes, no hay cambios del lado del servidor),
+                  datos no privados, datos no son demasiado largos
+             POST; los datos viajan en el cuerpo de la peticion
+                   para enviar datos privados o confidenciales, datos muy largos,
+                   cuando habra cambios en la parte back    -->
+    <form action="destino" method="get">
+        <fieldset>
+            <legend>Datos personales</legend>
+
+            <label for="nombreTxt">Nombre: </label>
+            <input type="text" name="nombre" id="nombreTxt" placeholder="Introduce tu nombre..."/> <br />
+
+            <label for="pwTxt">Password:</label>
+            <input type="password" name="pw" id="pwTxt"/> <br />
+
+            <label for="cvFile">Adjuntar curriculum:</label>
+            <input type="file" name="cv" id="cvFile"/> <br />
+
+            <label>Sexo:</label>
+            <input type="radio" name="sexo" id="sexoH" value="hombre" checked="checked"/>
+            <label for="sexoH">Hombre</label>
+            <input type="radio" name="sexo" id="sexoM" value="mujer"/>
+            <label for="sexoM">Mujer</label><br />
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos academicos</legend>
+
+            <label>Idiomas:</label>
+            <input type="checkbox" name="idioma" id="idiomaIngles" value="ingles" />
+            <label for="idiomaIngles"> Ingles</label>
+            <input type="checkbox" name="idioma" id="idiomaFrances" value="frances" />
+            <label for="idiomaFrances"> Frances</label>
+            <input type="checkbox" name="idioma" id="idiomaAleman" value="aleman" />
+            <label for="idiomaAleman"> Aleman</label> <br/>
+
+            <label for="nivelEstudios">Nivel de estudios:</label>
+            <select name="estudios" id="nivelEstudios">
+                <option value="nada">Sin estudios</option>
+                <option value="eso" selected="selected">ESO</option>
+                <option value="medio">Grado Medio</option>
+                <option value="superior">Grados Superior</option>
+                <option value="grado">Grado</option>
+                <option value="master">Master</option>
+            </select> <br/>
+
+            <label for="listaCursos">Cursos:</label>
+            <select name="cursos" id="listaCursos" multiple="multiple">
+                <option value="ofi">Ofimatica</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="angular">Angular</option>
+                <option value="react">React</option>
+            </select> <br/>
+
+            <label for="expLaboral">Cuentanos tu experiencia laboral:</label> <br/>
+            <textarea name="experiencia" id="expLaboral" cols="60" rows="5"></textarea> <br/>
+        </fieldset>
+
+        <input type="reset" value="Limpiar">
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>

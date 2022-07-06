@@ -1,0 +1,23 @@
+p::first-letter{
+    color: hotpink;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 25px;
+}
+
+p::first-line{
+    color: blue;
+    font-size: 1.2em;
+}
+
+p::before{
+    content: "Erase una vez ...";
+}
+
+p::after{
+    content: "FIN";
+}
+
+p::selection{
+    background-color: yellow;
+}

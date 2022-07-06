@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            /* selector de etiqueta */
+            h4{color: darkgoldenrod;}
+
+            /* selector por identificador */
+            #enc5{color:rgba(246, 92, 118, 0.5);}
+
+            /* selector de clase, se tiene que aplicar con el atributo class */
+            .verde{color:#0d920d;}
+
+            table{
+                border-width: 5px; /* thin, medium, thick, px */
+                border-color: darkorchid;
+                border-style: solid; /*solid, dotted, dashed, double, none */
+                border-collapse: collapse;
+            }
+
+            /* Estilo para los td y th de la tabla*/
+            td, th{
+                border: medium double rgb(245, 141, 159);
+            }
+
+            /* Pintar las filas pares de un color y las impares de otro
+               A esto se le llama tablas cebreadas
+               OJO!! tener en cuenta que la primera fila es 0*/
+            tr:nth-child(odd){  /* filas impar*/
+                background-color: rgb(245, 245, 184);
+            }
+            tr:nth-child(even){  /* filas pares*/
+                background-color: rgb(250, 250, 231);
+            }
+
+            ul{
+                list-style: circle;
+            }
+
+            /* pseudo elementos para enlaces*/
+            a:hover{} /* cuando el raton esta encima del enlace */
+            a:visited{} /* enlaces que ya se han visitado*/
+        </style>
+    </head>
+    <body>
+        <h1>Encabezado 1</h1>
+        <h2 style="color: deepskyblue;">Encabezado 2</h2>
+        <h3>Encabezado 3</h3>
+        <h4>Encabezado 4</h4>
+        <h5 id="enc5">Encabezado 5</h5>
+        <h6 class="verde">Encabezado 6</h6>
+
+        <table>
+            <tr> <!-- table row-->
+                <th>Columna 1</th>  <!-- table head -->
+                <th>Columna 2</th>
+                <th>Columna 3</th>
+                <th>Columna 4</th>
+            </tr>
+            <tr>
+                <td>Dato</td>   <!-- table data -->
+                <td>Dato</td>
+                <td>Dato</td>
+                <td>Dato</td>
+            </tr>
+            <tr>
+                <td>Dato</td>   <!-- table data -->
+                <td>Dato</td>
+                <td>Dato</td>
+                <td>Dato</td>
+            </tr>
+            <tr>
+                <td>Dato</td>   <!-- table data -->
+                <td>Dato</td>
+                <td>Dato</td>
+                <td>Dato</td>
+            </tr>
+            <tr>
+                <td>Dato</td>   <!-- table data -->
+                <td>Dato</td>
+                <td>Dato</td>
+                <td>Dato</td>
+            </tr>
+        </table>
+
+        <h2>Listas no ordenadas - Viñetas</h2>
+        <ul>
+            <li>Aceite</li>
+            <li>Jamon</li>
+            <li>Pan</li>
+            <li>Tomate</li>
+        </ul>
+    </body>
+</html>

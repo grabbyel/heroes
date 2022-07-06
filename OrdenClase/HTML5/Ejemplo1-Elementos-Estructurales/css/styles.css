@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    background-color: beige;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #555;
+}
+
+#contenido{
+    width: 980px;
+    margin: 0 auto;
+}
+
+header{
+    width: 980px;
+    height: 120px;
+    background-color: lightpink;  
+}
+
+h1{
+    text-align: center;
+}
+
+nav{
+    background-color: black;
+    color: beige;
+    float: left;
+    width: 980px;
+}
+
+section{
+    width: 780px;
+    background-color: darkgray;
+    height: 400px;
+    float: left;
+}
+
+section article{
+    min-height: 160px;
+    background-color: azure;
+}
+
+#publi{
+    width: 200px;
+    background-color: gold;
+    height: 200px;
+    float: left;
+}
+
+aside{
+    width: 200px;
+    background-color: cornflowerblue;
+    height: 200px;
+    float:left;
+}
+
+footer{
+    width: 980px;
+    height: 80px;
+    background-color: lightpink;
+    float: left;
+}
+
+footer p{
+    text-align: right;
+}
+
+footer #autor{
+    text-align: center;
+}
+
+.rojo{
+    color: red;
+}

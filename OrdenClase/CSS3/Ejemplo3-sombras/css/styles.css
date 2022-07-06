@@ -1,0 +1,45 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Splash&display=swap');*/
+
+@font-face{
+    font-family: 'Splash';
+    src: url(https://fonts.googleapis.com/css2?family=Splash&display=swap);
+}
+
+@font-face {
+    font-family: 'Pepito';
+    src: url(https://fonts.gstatic.com/s/merriweather/v15/RFda8w1V0eDZheqfcyQ4EOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+} 
+
+#titulo1{
+    text-shadow: 5px 3px 3px darkgray;
+    font-family: 'Splash', cursive;
+}
+
+#titulo2{
+    font-family: 'Pepito';
+    text-shadow: 3px 3px 1px darkgray;
+}
+
+#titulo3{
+    text-shadow: -3px 3px 1px darkgray;
+}
+
+#titulo4{
+    text-shadow: -3px -3px 3px darkgray;
+}
+
+#cuadro1{
+    width: 50%;
+    background-color: lightgoldenrodyellow;
+    padding: 10px;
+    box-shadow: 15px 15px 10px khaki;
+}
+
+#cuadro2{
+    width: 50%;
+    background-color: lightskyblue;
+    padding: 10px;
+    margin-top: 60px;
+    box-shadow: 10px 10px 10px rgb(81, 175, 234),
+                15px 15px 10px rgb(41, 115, 160);
+}

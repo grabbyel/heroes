@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Splash&display=swap');
+
+@font-face {
+	font-family: 'Splash', cursive;
+	src: url('fonts/Splash.ttf');
+}
+
+#titulo1 {
+	text-shadow: 5px 3px 3px gray;
+	font-family: 'Splash', cursive;
+}
+
+#cuadro1 {
+	width: 50%;
+	background-color: lightgoldenrodyellow;
+	padding: 10px;
+	box-shadow: 15px -15px 15px khaki;
+}
+
+#cuadro2 {
+	width: 50%;
+	background-color: lightskyblue;
+	padding: 10px;
+	margin: 40px 0px 0px 0px;
+	box-shadow: 15px -15px 15px rgb(37, 89, 121), 15px -15px 15px rgb(164, 194, 212);
+}

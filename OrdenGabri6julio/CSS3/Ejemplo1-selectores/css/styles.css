@@ -1,0 +1,66 @@
+/* Todos los campos deshabilitados, que se muestren en color rojo*/
+
+input:disabled {
+	color: rgb(192, 19, 19);
+}
+
+/* los campos del checkbox que sean seleccionados, que LA ETIQUETA se muestre en verde y negrita*/
+/* Con el operador +: selector adyacente-- se aplica*/
+input[type='checkbox']:checked + label {
+	color: green;
+	font-weight: bold;
+}
+
+/* El elemento que adquiera el foco (por ejemplo seleccionado tabulando), aplicarle estilos*/
+/*  OJO!!! esto funciona con los radio y los checkbox*/
+input:focus + label {
+	border: thin solid rgb(106, 80, 255);
+}
+
+/* Para las cajas de texto, funciona así*/
+input:focus {
+	border: thin solid rgb(106, 80, 255);
+	outline: none;
+}
+
+/* de esa ol seleccionar todos los nombres que comienzan por p y ponerlos de fondo amarillo*/
+ol li[id^='P'] {
+	background-color: rgb(255, 255, 0);
+	width: fit-content;
+}
+
+/* de esa ol seleccionar todos los nombres que terminan en "e" y ponerlos de fondo amarillo*/
+ol li[id$='e'] {
+	background-color: rgb(0, 247, 255);
+	width: fit-content;
+}
+/* de esa ol seleccionar todos los nombres que contienen "t" y ponerlos de fondo amarillo*/
+ol li[id*='t'] {
+	background-color: rgb(0, 255, 64);
+	width: fit-content;
+}
+
+/* echar un vistazo para guiarte en todo esto en https://css-tricks.com/a-complete-guide-to-data-attributes/*/
+ol li:is([id$='e'], [id$='E']) {
+	background-color: rgb(0, 247, 255);
+	width: fit-content;
+}
+
+/* cebreada por filas*/
+#tabla1 tr:nth-child(odd) {
+	background-color: beige;
+}
+
+#tabla1 tr:nth-child(even) {
+	background-color: rgb(206, 506, 153);
+}
+
+/* Tabla cebreada por columnas*/
+#tabla2 th:nth-child(odd),
+#tabla2 td:nth-child(odd) {
+	background-color: beige;
+}
+#tabla2 th:nth-child(even),
+#tabla2 td:nth-child(even) {
+	background-color: rgb(206, 506, 153);
+}

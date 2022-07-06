@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- 
+    ++Get--todos esos datos van a viajar convertido en url  
+        -ej: url?param1=value1....
+        -sólo para consultas en las que no hay cambios del lado del servidor
+        -para datos que no sean privados
+        -cuando los datos no son demasiado largos
+    ++Post -- no se ven en el cuerpo de la url, se ven en el cuerpo de la peticion, con lo que no están a la vista de los usuarios 
+        -Para enviar datos privados, como contraseña, etc.
+        -Datos muy largos, con mucha informacion
+        -cuando habra cambios en la parte backend
+    -->
+		<form action="destino" method="post">
+			<fieldset>
+				<legend>Datos personales</legend>
+				<label for="nombreTxt">Nombre: </label>
+				<input type="text" name="nombre" id="nombreTxt" placeholder="Ponga aquí su nombre..." /> <br />
+				<label for="pwTxt">Password: </label>
+				<input type="password" name="pw" id="pwTxt" />
+				<label for="cvFile">Adjuntar curricculum:</label>
+				<input type="file" name="cv" id="cvFile" /> <br />
+				<label>Sexo: </label>
+				<input type="radio" name="sexo" value="mujer" /> Mujer <input type="radio" name="sexo" value="hombre" /> Hombre <br />
+			</fieldset>
+			<fieldset>
+				<legend>Datos académicos</legend>
+				<label for="">Idiomas</label><br />
+				<input type="checkbox" name="idiomas" id="idiomaIngles" value="ingles" />
+				<label for="idiomaIngles">Inglés</label><br />
+				<input type="checkbox" name="idiomas" id="idiomaFrances" value="frances" />
+				<label for="idiomaFrances">Francés</label><br />
+				<input type="checkbox" name="idiomas" id="idiomaAleman" value="aleman" />
+				<label for="idiomaAleman">Alemán</label><br />
+
+				<label for="">Nivel de estudios</label>
+				<select name="estudios" id="nivelEstudios">
+					<option value="nada">Sin estudios</option>
+					<option value="primaria" selected="selected">Primaria</option>
+					<option value="secundaria">Secundaria</option>
+					<option value="universidad">Universidad</option>
+					<option value="master">Master</option>
+					<option value="doctorado">Doctorado</option>
+				</select>
+				<br />
+
+				<label for="listaCursos">Cursos</label>
+				<select name="cursos" id="listaCursos" multiple="multiple">
+					<option value="ofi">Ofimatica</option>
+					<option value="html">HTML</option>
+					<option value="css">CSS</option>
+					<option value="angular">Angular</option>
+					<option value="react">React</option></select
+				><br />
+
+				<label for="">Cuéntanos tu experiencia laboral</label><br />
+				<textarea name="experiencia" id="expLaboral" cols="30" rows="10"></textarea>
+			</fieldset>
+
+			<input type="reset" value="Limpiar" />
+			<input type="submit" value="Enviar" />
+		</form>
+	</body>
+</html>
