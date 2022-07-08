@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<!-- <style>
+			canvas {
+				width: 800px;
+				height: 400px;
+			}
+		</style> -->
+	</head>
+	<body>
+		<canvas id="lienzo" width="800px" height="1200"> Su navegador no soporta HTML 5 </canvas>
+
+		<script>
+			//Obtener la referencia al objeto canvas
+			let lienzo = document.getElementById('lienzo')
+
+			//Acceder al contexto del canvas
+			let contexto = lienzo.getContext('2d')
+
+			//pintar un rectángulo rojo
+			// contexto.fillStyle = `red`
+			// contexto.fillRect(10, 10, 200, 200)
+
+			// //pintar un rectángulo con perímetro azul
+			// contexto.strokeStyle = `blue`
+			// contexto.strokeRect(250, 10, 200, 200)
+
+			// //pintar el rectangulo amarillo con borde verde
+			// contexto.fillStyle = `yellow`
+			// contexto.strokeStyle = `green`
+			// contexto.fillRect(10, 250, 200, 200)
+			// contexto.strokeRect(10, 250, 200, 200)
+
+			// //color rosa
+			// contexto.fillStyle = `pink`
+			// contexto.arc(300, 300, 50, 0, Math.PI * 2, true)
+			// contexto.fill()
+
+			// //Pokeball
+			// ctxCanvas.fillStyle = 'red';
+			// ctxCanvas.beginPath()
+			// ctxCanvas.arc(110, 100, 50, 0, 2 * Math.PI)
+			// ctxCanvas.fill()
+
+			// ctxCanvas.fillStyle = 'white';
+			// ctxCanvas.beginPath()
+			// ctxCanvas.arc(110, 100, 50, 0, 1 * Math.PI)
+			// ctxCanvas.fill()
+
+			// ctxCanvas.fillStyle = "black";
+			// ctxCanvas.fillRect(60, 98, 100, 5);
+
+			// ctxCanvas.fillStyle = 'black';
+			// ctxCanvas.beginPath()
+			// ctxCanvas.arc(110, 100, 10, 0, 2 * Math.PI)
+			// ctxCanvas.fill()
+
+			// ctxCanvas.fillStyle = 'white';
+			// ctxCanvas.beginPath()
+			// ctxCanvas.arc(110, 100, 9, 0, 2 * Math.PI)
+			// ctxCanvas.fill()
+
+			// contexto.fillStyle = 'red'
+			// contexto.beginPath()
+			// contexto.moveTo(300,250)
+			// contexto.lineTo(250,300)
+			// contexto.lineTo(250,350)
+			// contexto.lineTo(350,350)
+			// contexto.lineTo(350,300)
+			// contexto.lineTo(300,250)
+			// contexto.fill()
+
+			//trapezio
+			contexto.fillStyle = 'red'
+			contexto.beginPath()
+			contexto.moveTo(300, 250)
+			contexto.lineTo(400, 250)
+			contexto.lineTo(320, 420)
+			contexto.lineTo(220, 420)
+			//contexto.lineTo(300,250)
+			contexto.closePath()
+			contexto.fill()
+		</script>
+	</body>
+</html>

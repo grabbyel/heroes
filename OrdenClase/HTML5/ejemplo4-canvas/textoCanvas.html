@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<canvas id="lienzo" width="1200px" height="600"> su navegador no soporta canvas </canvas>
+		<script>
+			let canvas = document.getElementById('lienzo')
+			let contexto = canvas.getContext('2d')
+
+			contexto.fillStyle = 'green'
+			contexto.font = 'bold 25px Arial'
+			contexto.fillText('Saludoss!!!', 50, 50) //Texto entrecomillado, ejeX, ejeY
+
+			//Texto perfilado
+			contexto.strokeStyle = 'blue'
+			contexto.strokeText('Saludoss!!!', 50, 150)
+		</script>
+	</body>
+</html>
