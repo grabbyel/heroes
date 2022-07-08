@@ -1,0 +1,18 @@
+div {
+	width: 30%;
+	min-height: 100px;
+	background-color: gainsboro;
+	padding: 10px;
+	border-radius: 20px;
+	transition: width 2s, height 4s, background-color 6s;
+}
+
+div:hover {
+	width: 70%;
+	min-height: 20px;
+	background-color: rgb(118, 118, 245);
+}
+
+div:focus {
+	background-color: chocolate;
+}

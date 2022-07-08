@@ -1,0 +1,31 @@
+div {
+	width: 200px;
+	height: 200px;
+	background-color: orange;
+	font-size: 1em;
+}
+
+div:hover {
+	animation-name: animacion1;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes animacion1 {
+	0% {
+		background-color: red;
+		font-size: 1em;
+	}
+	25% {
+		background-color: aqua;
+		font-size: 2em;
+	}
+	50% {
+		background-color: blue;
+		font-size: 1em;
+	}
+	75% {
+		background-color: blueviolet;
+		font-size: 2em;
+	}
+}

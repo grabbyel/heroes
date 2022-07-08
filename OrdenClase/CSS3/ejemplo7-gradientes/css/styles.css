@@ -1,0 +1,49 @@
+div {
+	width: 80%;
+	height: 150px;
+	margin: 20px;
+	background: bisque;
+}
+
+#defecto {
+	background: linear-gradient(blue, red, yellow);
+}
+
+#arriba {
+	background: linear-gradient(to top, blue, red, yellow);
+}
+
+#izda-dcha {
+	background: linear-gradient(to right, blue, red, yellow);
+}
+
+#dcha-izda {
+	background: linear-gradient(to left, blue, red, yellow);
+}
+
+#diagonal-dcha {
+	background: linear-gradient(to top right, blue, red, yellow);
+}
+
+#diagonal-izda {
+	background: linear-gradient(to top left, blue, red, yellow);
+}
+
+#porDefecto {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: radial-gradient(blue, pink, yellow);
+}
+
+#circulo {
+	background: radial-gradient(circle, blue, pink, yellow);
+}
+
+#elipse {
+	background: radial-gradient(ellipse, blue, pink, yellow);
+}
+
+#repetir {
+	background: repeating-radial-gradient(ellipse, blue 10%, pink 20%, yellow 30%);
+}

@@ -1,0 +1,19 @@
+.fondo {
+	background-color: rgb(196, 196, 196);
+}
+
+div + div {
+	margin-top: 10px;
+}
+
+.bordeBase {
+	border: 1px solid black;
+}
+
+.bordeRojo {
+	border: 2px dashed rgb(243, 8, 8);
+}
+
+.padding {
+	padding: 10px 20px 30px 40px;
+}

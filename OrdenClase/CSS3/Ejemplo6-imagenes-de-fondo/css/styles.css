@@ -1,0 +1,11 @@
+div {
+	width: 50%;
+	min-height: 200px;
+	background-color: bisque;
+	margin: 50px;
+}
+
+#cuadro1 {
+	background-image: url(../storage/logo.jpeg);
+	background-repeat: no-repeat;
+}

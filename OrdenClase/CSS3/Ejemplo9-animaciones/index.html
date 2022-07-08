@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<!-- <link rel="stylesheet" href="css/styles.css" /> -->
+		<style>
+			div {
+				width: 200px;
+				height: 200px;
+				background-color: orange;
+				font-size: 1em;
+			}
+
+			div:hover {
+				animation-name: animacion1;
+				animation-duration: 3s;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes animacion1 {
+				0% {
+					/* background-color: red; */
+					font-size: 1em;
+				}
+				25% {
+					background-color: aqua;
+					font-size: 2em;
+				}
+				50% {
+					background-color: blue;
+					font-size: 1em;
+				}
+				75% {
+					background-color: blueviolet;
+					font-size: 2em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div>Hola qué tal??</div>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+ul {
+	list-style: none;
+	transition: margin-left 1s, margin-left 1s, font-size 1s, transform 1s;
+}
+
+ul:hover {
+	transform: translateX(10px);
+	font-weight: bold;
+	/* margin-left: 10px; */
+	font-size: 1.2em;
+	/* margin-bottom: 30px; */
+}
