@@ -5,13 +5,58 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			div {
+				margin-bottom: 20px;
+			}
+		</style>
 	</head>
 	<body>
 		<form action="">
 			<fieldset>
 				<legend>Datos personales</legend>
 				<label for="nombreTxt">Nombre:</label>
-				<input type="text" name="nombre" id="nombreTxt" minlength="10" required="required" />
+				<input type="text" name="nombre" id="nombreTxt" minlength="3" maxlength="20" required="required" />
+				<br />
+				<label for="apellidoTxt">Apellido: </label>
+				<input type="text" name="apellido" id="apellidoTxt" list="apellidosList" />
+				<div>
+					<datalist id="apellidosList">
+						<option value="Lopez" />
+						<option value="Lara" />
+						<option value="Laiz" />
+						<option value="Sanz" />
+						<option value="Sanchez" />
+						<option value="Sevilla" />
+					</datalist>
+				</div>
+
+				<label for="edadTxt">Edad:</label>
+				<input type="number" name="edad" id="edadTxt" min="18" max="99" required="required" /><br />
+
+				<label for="emailTxt">Email:</label>
+				<input type="email" name="email" id="emailTxt" required="required" /><br />
+
+				<div>
+					<label for="url">Url</label>
+					<input type="url" name="url" id="url" />
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Reserva</legend>
+				<div>
+					<label for="reservaDate">Fecha reserva:</label>
+					<input type="datetime-local" name="reserva" id="reservaDate" min="2022-07-08T10:00:00" value="2022-07-08" />
+				</div>
+				<div>
+					<label for="horaTime">Hora:</label>
+					<input type="time" name="hora" id="horaTime" min="T11:00:00" max="20:00" value="12:00" />
+				</div>
+
+				<div>
+					<label for="colorTxt">Color de silla: </label>
+					<input type="color" name="silla" id="colorTxt" value="#ff40ff" />
+				</div>
 			</fieldset>
 			<input type="submit" value="Enviar" />
 			<input type="reset" value="Borrar Datos" />
