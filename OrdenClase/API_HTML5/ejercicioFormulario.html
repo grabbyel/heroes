@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="stylesEjercicio.css" />
+	</head>
+	<body>
+		<form id="container">
+			<div class="columna">
+				<div>
+					<label for="firstName">FIRST NAME</label>
+					<input type="text" name="first name" id="firstName" minlength="4" maxlength="20" placeholder="Gabriel" required="required" />
+				</div>
+				<div>
+					<label for="lastName">LAST NAME</label>
+					<input type="text" required="required" minlength="3" maxlength="20" id="lastName" placeholder="Galdeano" />
+				</div>
+				<div>
+					<label for="mail">EMAL ADDRESS</label>
+					<input type="email" required="required" id="mail" placeholder="gabri@galde" />
+				</div>
+				<div>
+					<label for="country">COUNTRY</label>
+					<select class="gradient" type="text" id="country" placeholder="Elige un país" style="background-color: transparent">
+						<option value="España">España</option>
+						<option value="Francia">Francia</option>
+						<option value="Alemania">Alemania</option>
+						<option value="Holanda">Holanda</option>
+						<option value="Portugal">Portugal</option>
+					</select>
+				</div>
+				<div>
+					<label for="biography">BIOGRAPHY</label>
+					<textarea
+						name="biografia"
+						id="biography"
+						cols="20"
+						rows="6"
+						style="background-color: transparent; border: 2px solid white"
+						placeholder="cuentame tu vida"
+					></textarea>
+				</div>
+			</div>
+			<div class="columna">
+				<div>
+					<label for="phone">PHONE NUMBER</label>
+					<input type="text" id="phone" minlength="9" maxlength="12" placeholder="600604224" />
+				</div>
+				<div>
+					<label for="affiliations">AFFILIATIONS</label>
+					<textarea
+						name="hobbies"
+						id="affiliations"
+						cols="25"
+						rows="6"
+						style="background-color: transparent; border: 2px solid white"
+						placeholder="tus hobbies?"
+					></textarea>
+				</div>
+				<div>
+					<label for="">OCCUPATION</label>
+					<select class="gradient" type="text" id="occupation" placeholder="Elige tu laburo">
+						<option value="program1">programador</option>
+						<option value="program2">solo programador</option>
+						<option value="program3">tambien puede ser programador</option>
+						<option value="program4">incluso programador</option>
+						<option value="program5">programador es bueno</option>
+					</select>
+				</div>
+				<div>
+					<label for="dogName">DOGS'S NAME</label>
+					<input type="text" id="dogName" placeholder="Minnie" />
+				</div>
+				<div>
+					<label for="gadget">FAVORITE GADGET</label>
+					<input type="text" id="gadget" />
+				</div>
+			</div>
+			<div class="columna">
+				<div>
+					<label for="talento">TYPE OF TALENT</label>
+					<select class="gradient" type="text" id="talento" placeholder="Tipo de talento">
+						<option value="program1">programador</option>
+						<option value="program2">solo programador</option>
+						<option value="program3">tambien puede ser programador</option>
+						<option value="program4">incluso programador</option>
+						<option value="program5">programador es bueno</option>
+					</select>
+				</div>
+				<div>
+					<label for="gadget">FAVORITE DRINK</label>
+					<input type="text" id="drink" placeholder="a lot of beer" />
+				</div>
+				<div>
+					<label for="specialPower">SPECIAL POWER</label>
+					<input type="text" id="specialPower" placeholder="programming" />
+				</div>
+				<div>
+					<label for="weapon">WEAPON OF CHOICE</label>
+					<input type="text" id="weapon" placeholder="mi no entender" />
+				</div>
+				<div>
+					<label for="comments">COMMENTS</label>
+					<textarea
+						name="comentarios"
+						id="comments"
+						cols="25"
+						rows="6"
+						style="background-color: transparent; border: 2px solid white"
+						placeholder="quieres decirme algo??"
+					></textarea>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

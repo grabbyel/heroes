@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*Ejemplo para descargar el logo de hiberus de una web y mostrarlo en nuestra página*/
+
+            // Obtener una instancia del objeto XMLHttpRequest
+            var xhr = new XMLHttpRequest()
+
+            // Preparar la petición
+            var url = 'https://www.extradigital.es/wp-content/uploads/2019/06/Hiberus.jpg'
+            xhr.open('GET', url, true) //true->petición asíncrona, false-> síncrona
+
+            /*Tipo de respuesta:
+                formatos: text,document,blob,arraybuffer
+            */
+            xhr.responseType = 'blob'
+
+            //Enviar la petición
+            //con el método GET, no es necesario ningún parámetro
+            //con el método POST, podríamos que viaja en el body
+            xhr.send() 
+
+            //Procesamos la respuesta
+            xhr.onload = procesar
+            
+            function procesar(event) {
+                // Sólo proceso si la respuesta ha llegado de forma correcta
+                if(this.status ==200) {
+                    var img = document.createElement('img')
+                    img.src = window.URL.createObjectURL(this.response)
+                    document.body.appendChild(img)
+                }
+            }
+        </script>
+    </body>
+</html>
