@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form id="formulario">
+			<label for="n1">Numero 1</label>
+			<input type="text" name="numero1" id="n1" value="0" />
+
+			<label for="n2">Numero 2</label>
+			<input type="text" name="numero2" id="n2" value="0" />
+		</form>
+
+		<button onclick="operar('suma')">Sumar</button>
+		<button onclick="operar('resta')">Restar</button>
+		<button onclick="operar('multiplica')">Multiplicar</button>
+		<button onclick="operar('divide')">Dividir</button>
+		<button onclick="operar('divEntera')">División entera</button>
+
+		<div id="resultado" style="padding: 1rem"></div>
+
+		<!-- 
+        <button onclick="saludar()">Saludar</button>
+		<button onclick="despedir()">Saludar</button>
+         -->
+
+		<script>
+			// function solicitaDatos() {
+			// let a = +formulario.numero1.value
+			// let b = +formulario.numero2.value
+			// }
+
+			// function sumar() {
+			// 	// let a = prompt('introduzca un número')
+			// 	// let b = prompt('introduzca OTRO número')
+			// 	let a = +formulario.numero1.value
+			// 	let b = +formulario.numero2.value
+			// 	let resultado = a + b
+			// 	$resultado.innerText = `La suma de ${a} y ${b} es ${resultado}`
+			// }
+
+			// function restar() {
+			// 	// let a = prompt('introduzca un número')
+			// 	// let b = prompt('introduzca OTRO número')
+			// 	let a = +formulario.numero1.value
+			// 	let b = +formulario.numero2.value
+			// 	let resultado = a - b
+			// 	$resultado.innerText = `La resta de ${a} y ${b} es ${resultado}`
+			// }
+
+			// function multiplicar() {
+			// 	// let a = prompt('introduzca un número')
+			// 	// let b = prompt('introduzca OTRO número')
+			// 	let a = +formulario.numero1.value
+			// 	let b = +formulario.numero2.value
+			// 	let resultado = a * b
+			// 	$resultado.innerText = `La multiplicación de ${a} y ${b} es ${resultado}`
+			// }
+
+			// function dividir() {
+			// 	// let a = prompt('introduzca un número')
+			// 	// let b = prompt('introduzca OTRO número')
+			// 	let a = +formulario.numero1.value
+			// 	let b = +formulario.numero2.value
+			// 	let resultado = a / b
+			// 	$resultado.innerText = `La división de ${a} y ${b} es ${resultado.toFixed(2)}`
+			// }
+
+			// function divEntera() {
+			// 	// let a = prompt('introduzca un número')
+			// 	// let b = prompt('introduzca OTRO número')
+			// 	let a = +formulario.numero1.value
+			// 	let b = +formulario.numero2.value
+			// 	let resultado = a % b
+			// 	$resultado.innerText = `En la Division entera de ${a} y ${b}, el cociente es ${Math.floor(a / b)} y el resto es ${resultado}`
+			// }
+
+			// let nombre = prompt('y tú como te llamas??')
+			// function saludar() {
+			//     alert(`Hola ${nombre}`)
+			// }
+			// function despedir() {
+			//     var apellido = prompt('ahora tú apellido, pringao')
+			//     alert(`Adios Sr ${nombre} ${apellido}`)
+			// }
+
+			function operar(operacion) {
+				const $resultado = document.getElementById('resultado')
+				let a = +formulario.numero1.value
+				let b = +formulario.numero2.value
+
+				switch (operacion) {
+					case 'suma':
+						$resultado.innerText = `La suma de ${a} y ${b} es ${a + b}`
+						break
+					case 'resta':
+						$resultado.innerText = `La resta de ${a} y ${b} es ${a - b}`
+						break
+					case 'multiplica':
+						$resultado.innerText = `La multiplicacion de ${a} y ${b} es ${a * b}`
+						break
+					case 'divide':
+						$resultado.innerText = `La division de ${a} y ${b} es ${(a / b).toFixed(2)}`
+						break
+					case 'divEntera':
+						let resultado = a % b
+						$resultado.innerText = `En la Division entera de ${a} y ${b}, el cociente es ${Math.floor(a / b)} y el resto es ${resultado}`
+						break
+
+					default:
+						alert('operación no definida correctamente')
+						break
+				}
+			}
+		</script>
+	</body>
+</html>

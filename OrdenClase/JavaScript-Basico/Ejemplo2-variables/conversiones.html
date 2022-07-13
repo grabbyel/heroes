@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// **Conversiones implicitas*
+			// numeros y texto
+			document.write('Hola' + 7 + '<br/>')
+
+			//numeros y boolean
+			document.write('Suma' + 7 + 5 + '<br/>')
+			document.write('Suma' + (7 + 5) + '<br/>')
+
+			//numeros y boolean
+			document.write(true + 7 + '<br/>') //se convierte a numerico con valor 1
+			document.write(false + 7 + '<br/>') //se convierte a numerico con valor 0
+
+			//**Conversiones explicitas**
+
+			//parseFloat -> convierte texto a numero real
+			document.write(parseFloat('12.34') + '<br/>')
+			document.write(parseFloat('12.ABERC34') + '<br/>')
+			document.write(parseFloat('12.3HDGSH4') + '<br/>')
+			document.write(parseFloat('PEPITO') + '<br/>')
+			document.write(parseFloat('BFGHSDT') + '<br/>')
+
+			//parseInt -> convierte texto a numero entero
+			document.write(parseInt('12.34') + '<br/>')
+			document.write(parseInt('12345') + '<br/>')
+			document.write(parseInt('12DTGSTGD34') + '<br/>')
+			document.write(parseInt('100100111010') + '<br/>')
+			document.write(parseInt('12345', 8) + '<br/>')
+
+			//toString -> convierte cualquier valor a una cadena de texto
+			document.write(new Date().toString() + '<br/>')
+			document.write((789).toString() + '<br/>')
+			document.write((789).toString(16) + '<br/>') //Hexadecimal
+			document.write((789).toString(8) + '<br/>') //Octal
+			document.write((789).toString(2) + '<br/>') //Binario
+
+			//Solicitar 2 numeros al usuario y devolver la suma
+			var numero1 = +window.prompt('Introduce un numero')
+			var numero2 = +window.prompt('Introduce un numero')
+			document.write('Suma de numeros que solicitamos: ' + (numero1 + numero2) + '<br/>')
+		</script>
+	</body>
+</html>
