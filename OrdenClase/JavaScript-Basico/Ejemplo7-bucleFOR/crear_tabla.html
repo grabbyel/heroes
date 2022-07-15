@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body onload="cargarDatos()">
+		<table id="miTabla" border="1"></table>
+		<select name="parametro" id="combo"></select>
+		<script>
+			// function cargarDatos(){
+			//     for(var fila=1; fila <=5; fila++){
+
+			//     }
+			// }
+
+			function cargarDatos() {
+				for (let fila = 1; fila <= 5; fila++) {
+					let datosFila = '<tr>'
+
+					for (let columna = 1; columna <= 4; columna++) {
+						datosFila += `<td>dato ${fila}, ${columna}</td>`
+					}
+					datosFila += '<tr>'
+					document.getElementById('miTabla').innerHTML += datosFila
+				}
+			}
+		</script>
+	</body>
+</html>

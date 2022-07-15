@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<select name="parametro" id="combo"></select>
+
+		<script>
+			for (var i = 1; i <= 6; i++) {
+				//document.getElementById('combo').innerHTML += `<option value ="${i}">Opción ${i}</opcion>`
+
+				var opcion = new Option(`Opción ${i}`, i)
+				document.getElementById('combo').appendChild(opcion)
+			}
+		</script>
+	</body>
+</html>

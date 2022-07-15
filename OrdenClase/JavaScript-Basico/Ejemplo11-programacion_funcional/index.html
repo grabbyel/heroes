@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var frutas = ['Pera', 'Manzana', 'Platano', 'Naranja', 'Melon']
+
+			//formas de recorrer un array
+			for (let indice = 0; indice < frutas.length; indice++) {
+				console.log(frutas[indice])
+			}
+
+			for (let indice in frutas) {
+				console.log(frutas[indice])
+			}
+
+			for (let fruta of frutas) {
+				console.log(fruta)
+			}
+
+			// foreach((cada elemento del array) => {qué hago con cada elemento})
+			frutas.forEach((fruta) => {
+				console.log(fruta)
+			})
+
+			// array.map((elemento que recibo del array original) => {transformación al array destino})
+			var frutasMayus = frutas.map((fruta) => {
+				fruta.toUpperCase()
+			})
+			console.log(frutasMayus)
+			console.log(
+				frutas.map((item) => {
+					item.toUpperCase()
+				})
+			)
+
+			//principio de inmutabilidad
+			console.log(frutas)
+
+			//array.filter((cada elemento del array) => condición del filtro)
+			console.log(
+				frutas.filter((fruta) => {
+					fruta.charAt(0) == 'P'
+				})
+			)
+
+			//array.reduce((acumulador, lo que recibo) => operación)
+			console.log(
+				[2, 8, 5, 3, 7].reduce((suma, num) => {
+					suma + num
+				})
+			)
+			console.log(
+				frutas.reduce((cadena, item) => {
+					cadena + '-' + item
+				})
+			)
+		</script>
+	</body>
+</html>

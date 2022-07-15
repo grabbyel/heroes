@@ -1,0 +1,20 @@
+#cuadrado {
+	box-sizing: border-box;
+	width: 50%;
+	height: 150px;
+	margin: 50px;
+	background-color: gray;
+}
+
+button {
+	margin: 1rem;
+	position: relative;
+}
+
+.sombra {
+	box-shadow: 10px 20px 10px red;
+}
+
+.restaurar {
+	background-color: black;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body onload="cargarSelectProvincia()">
+		<label for="prov">Provincias</label>
+		<select name="provincia" id="prov" onchange="cargarPoblacion()">
+			<option disabled="disabled" selected="selected">--selecciona--</option>
+		</select>
+		<label for="pobl">Población</label>
+		<select name="poblacion" id="pobl" disabled="disabled">
+			<option disabled="disabled" selected="selected">--selecciona--</option>
+		</select>
+
+		<script>
+			let provincias = ['Zaragoza', 'Huesca', 'Madrid']
+			let zaragoza = ['Zaragoza', 'Trauste', 'Ejea de los Caballeros']
+			let huesca = ['Barbastro', 'Jaca', 'Sabiñánigo']
+			let madrid = ['Las Rozas', 'Torrejón', 'Alcobendas']
+			// [['Zaragoza', 'Zaragoza', 'trauste', 'Ejea de los caballeros'],
+			// ['Huesca', 'Barbastro', 'Jaca', 'Sabiñánigo'],
+			// ['Madrid', 'Las Rozas', 'Torrejón', 'alcobendas']
+			// ]
+			function cargarSelectProvincia() {
+				for (var i = 0; i < provincias.length; i++) {
+					document.getElementById('prov').appendChild(new Option(`${provincias[i]}`, provincias[i]))
+				}
+			}
+
+			function cargarPoblacion() {
+				document.getElementById('pobl').removeAttribute('disabled')
+				provinciaSeleccionada = document.getElementById('prov').value
+
+				switch (provinciaSeleccionada) {
+					case 'Zaragoza':
+						document.getElementById('pobl').innerHTML = ''
+						for (var i = 0; i < zaragoza.length; i++) {
+							document.getElementById('pobl').appendChild(new Option(`${zaragoza[i]}`, zaragoza[i]))
+						}
+						break
+
+					case 'Huesca':
+						document.getElementById('pobl').innerHTML = ''
+						for (var i = 0; i < huesca.length; i++) {
+							let opcHuesca = new Option(`${huesca[i]}`, huesca[i])
+							document.getElementById('pobl').appendChild(opcHuesca)
+						}
+						break
+
+					case 'Madrid':
+						document.getElementById('pobl').innerHTML = ''
+						for (var i = 0; i < madrid.length; i++) {
+							let opcMadrid = new Option(`${madrid[i]}`, madrid[i])
+							document.getElementById('pobl').appendChild(opcMadrid)
+						}
+						break
+				}
+			}
+		</script>
+	</body>
+</html>

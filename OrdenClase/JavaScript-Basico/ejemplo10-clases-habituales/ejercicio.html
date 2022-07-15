@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<label for="nombre">Escriba su nombre</label>
+		<input type="text" id="nombre" /><br />
+		<label for="apellido">Escriba su apellido</label>
+		<input type="text" id="apellido" /><br />
+		<button onclick="saludar()">Saludame</button>
+		<script>
+			function saludar() {
+				const nombre = document.getElementById('nombre').value
+				const apellido = document.getElementById('apellido').value
+				alert(`Bienvenido, señor@ ${nombre} con apellido ${apellido}`)
+			}
+		</script>
+	</body>
+</html>

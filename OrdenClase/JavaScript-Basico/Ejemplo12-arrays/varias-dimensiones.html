@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// Crear un matriz de 3 filas x 2 columnas
+			var matriz1 = new Array(3)
+			matriz1[0] = new Array(2)
+			matriz1[1] = new Array(2)
+			matriz1[2] = new Array(2)
+
+			var matriz2 = new Array(new Array('Luis', 'Paula'), new Array('Jorge', 'Andres'), new Array('Alicia', 'Pedro'))
+
+			var matriz3 = [
+				['Luis', 'Paula'],
+				['Jorge', 'Andres'],
+				['Alicia', 'Pedro'],
+			]
+
+			// Agregar elementos al array
+			matriz1[0][0] = 'Luis'
+			matriz1[0][1] = 'Paula'
+			matriz1[1][0] = 'Jorge'
+			matriz1[1][1] = 'Andres'
+			matriz1[2][0] = 'Alicia'
+			matriz1[2][1] = 'Pedro'
+
+			// console.log('+++++++++++++++ FOR TRADICIONAL +++++++++++')
+			// for (let fila = 0; fila < matriz1.length; fila++) {
+			// 	for (let columna = 0; columna < matriz1[fila].length; columna++) {
+			// 		console.log(matriz1[fila][columna])
+			// 	}
+			// }
+
+			// console.log('+++++++++++++++ FOR IN +++++++++++')
+			// for (let fila in matriz2) {
+			// 	for (let columna in matriz2[fila]) {
+			// 		console.log(matriz2[fila][columna])
+			// 	}
+			// }
+
+			// console.log('+++++++++++++++ FOR OF +++++++++++')
+			// for (let fila of matriz2) {
+			// 	for (let nombre of fila) {
+			// 		console.log(nombre)
+			// 	}
+			// }
+
+			// console.log('+++++++++++++++ FOR EACH +++++++++++')
+			// matriz3.forEach((fila) => {
+			// 	fila.forEach((nombre) => {
+			// 		console.log(`Nuestro for each nos dice: ${nombre}`)
+			// 	})
+			// })
+
+			console.log('+++++++++++++++ REVERSE +++++++++++')
+			console.log(matriz1.reverse())
+			console.log('+++++++++++++++ SORT +++++++++++')
+			console.log(matriz1.sort())
+			console.log('+++++++++++++++ JOIN +++++++++++')
+			console.log(matriz1.join('\n'))
+			// console.log('Join: ' + [5, 2, 9, 7].join(' | ') + '<br/>')
+			// console.log('Slice 1,3: ' + [5, 2, 9, 7].slice(1, 3) + '<br/>')
+			// console.log('Slice 1: ' + [5, 2, 9, 7].slice(1) + '<br/>')
+			// console.log('Concat: ' + [5, 2, 9, 7].concat(array4) + '<br/>')
+			// console.log('Concat: ' + array4.concat([5, 2, 9, 7]) + '<br/>')
+		</script>
+	</body>
+</html>
