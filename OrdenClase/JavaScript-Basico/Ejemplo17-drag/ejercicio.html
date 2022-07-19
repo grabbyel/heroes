@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				display: flex;
+				flex-direction: column-reverse;
+			}
+			#contenedores {
+				display: grid;
+				/* margin: 0rem 0rem 0rem 1rem; */
+				grid-template-columns: repeat(3, 1fr);
+				align-items: center;
+			}
+			.contenedor {
+				color: white;
+				text-align: center;
+				margin: 4rem;
+				height: 200px;
+				width: 200px;
+				border: 3px solid gray;
+				background: center;
+			}
+			.correcto {
+				border: 5px solid green;
+			}
+			.inCorrecto {
+				border: 5px solid yellow;
+				background: crimson;
+			}
+			.arrastrable {
+				width: 50px;
+				height: 30px;
+				background-color: beige;
+				margin: 1rem;
+				float: left;
+				transition: 0.5s;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="madrid" class="arrastrable" draggable="true">Madrid</div>
+		<div id="lisboa" class="arrastrable" draggable="true">Lisboa</div>
+		<div id="paris" class="arrastrable" draggable="true">París</div>
+
+		<div id="contenedores">
+			<div
+				id="espana"
+				class="contenedor"
+				style="
+					background: url('https://imagenes.elpais.com/resizer/LfveUegvrjPKeaKQdeD2D1NfFV8=/414x233/cloudfront-eu-central-1.images.arcpublishing.com/prisa/JJSHFLQ4CYXZALNWL5WHCKZM3Q.jpg');
+				"
+			>
+				España
+			</div>
+			<div id="portugal" class="contenedor" style="background: url('https://i.ytimg.com/vi/v1we9NnN8Ok/maxresdefault.jpg')">Portugal</div>
+			<div
+				id="francia"
+				class="contenedor"
+				style="background: url('https://i0.wp.com/hipertextual.com/wp-content/uploads/2013/04/Paris.jpg?fit=1024%2C685&ssl=1')"
+			>
+				Francia
+			</div>
+		</div>
+
+		<script>
+			//Variables globales que almacena el id de la capital que estoy arrastrando
+			let capital
+			let pais
+
+			function esCorrecto() {
+				if (capital == 'madrid' && pais == 'espana') return true
+				if (capital == 'paris' && pais == 'francia') return true
+				if (capital == 'lisboa' && pais == 'portugal') return true
+				return false
+			}
+
+			document.addEventListener('dragstart', start)
+			document.addEventListener('dragend', end)
+			document.addEventListener('dragover', over)
+			document.addEventListener('dragleave', leave)
+			document.addEventListener('drop', drop)
+
+			function start() {
+				if (event.target.matches('.arrastrable')) {
+					event.target.style.opacity = '0.2'
+					capital = event.target.id
+					console.log(capital)
+				}
+			}
+			function end() {
+				if (event.target.matches('.arrastrable')) {
+					event.target.style.opacity = '1'
+					capital = undefined
+				}
+			}
+			function over() {
+				if (event.target.matches('.contenedor')) {
+					console.log('entra en over')
+					pais = event.target.id
+					console.log(`capital: ${capital}, pais: ${pais}`)
+					if (esCorrecto(capital, pais)) {
+						console.log('entra en if siendo correcto')
+						event.target.classList.add('correcto')
+						event.preventDefault()
+					} else event.target.classList.add('inCorrecto')
+				}
+				// event.target.style.border = 'none'
+			}
+			function leave() {
+				if (esCorrecto()) event.target.classList.remove('correcto')
+				else event.target.classList.remove('inCorrecto')
+			}
+			function drop() {
+				// event.target.style.borderRadius = '50%'
+				event.target.appendChild(arrastra)
+				console.log(event.target)
+				event.target.style.border = 'none'
+			}
+		</script>
+	</body>
+</html>

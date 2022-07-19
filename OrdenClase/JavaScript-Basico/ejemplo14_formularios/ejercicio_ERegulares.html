@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			th {
+				background-color: darkmagenta;
+				color: white;
+				font-size: 1.3em;
+				font-weight: bold;
+			}
+
+			#tabla,
+			td,
+			th {
+				border: thin solid white;
+				text-align: center;
+			}
+
+			tr:nth-child(odd) {
+				background-color: gainsboro;
+			}
+
+			tr:nth-child(even) {
+				background-color: grey;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Ejercicio expresiones regulares</h1>
+		<table id="tabla">
+			<th>
+				<tr>
+					Valor
+				</tr>
+				<tr>
+					Resultado
+				</tr>
+			</th>
+		</table>
+
+		<script>
+			let datos = [
+				'+56-2-24215300',
+				'+56 2 24215300',
+				'+56-2 24215300',
+				'+56 2-24215300',
+				'+56-2-2421530',
+				'+56-2-242153000',
+				'+34-2-24215300',
+				'+56-2-24215A00',
+			]
+			const patron = /^\+56(-2-| 2 )24215300$/
+			function useRegex(input) {
+				return patron.test(input)
+			}
+
+			function evaluaArray(array) {
+				array.forEach((element) => {
+					console.log(`Para el valor ${element} tenemos la respuesta: ${useRegex(element)}`)
+					// document.write(`<th><tr>${element}</tr><tr>${useRegex(element)}</tr></th><br>`)
+					// let tabla = document.getElementById('#tabla')
+
+					// let fila = document.createElement('th')
+					// let columna = document.createElement('tr')
+					// columna.innerText += `${element}`
+					// columna.innerText += `${useRegex(element)}`
+					let resultado = patron.test(element)
+					let fila = document.createElement('tr')
+					let columTfno = document.createElement('td')
+					let columResultado = document.createElement('td')
+
+					columTfno.innerText = element
+					columResultado.innerText = resultado
+
+					fila.appendChild(columTfno)
+					fila.appendChild(columResultado)
+
+					document.getElementById('tabla').appendChild(fila)
+				})
+			}
+
+			/*******************************************
+             * for (var elemento of datos) {
+    let resultado = patron.test(elemento);
+
+    let fila = document.createElement("tr");
+    let columTfno = document.createElement("td");
+    columTfno.innerText = elemento;
+    let columResultado = document.createElement("td");
+    columResultado.innerText = resultado;
+
+    fila.appendChild(columTfno);
+    fila.appendChild(columResultado);
+
+    document.getElementById("tabla").appendChild(fila);
+
+
+}
+             * 
+             * ******/
+
+			// console.table(datos)
+			evaluaArray(datos)
+		</script>
+	</body>
+</html>

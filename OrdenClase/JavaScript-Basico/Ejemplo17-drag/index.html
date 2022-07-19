@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejemplo Drag&Drop</title>
+		<style>
+			#contenedor {
+				width: 300px;
+				height: 200px;
+				float: right;
+				background-color: blanchedalmond;
+			}
+			/* body {
+				display: flex;
+			} */
+			#idContenedor {
+				width: 100px;
+				height: 100px;
+				/* background-color: aqua; */
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="idContenedor">
+			<div id="arrastra" draggable="true">Elemento arrastrable</div>
+		</div>
+		<div id="contenedor"></div>
+
+		<script>
+			//asociar los eventos mediante JavaScript
+			arrastra.ondragstart = start
+			arrastra.ondragend = end
+			//arrastra.draggable ='true'		Tambien funciona así
+
+			contenedor.ondragover = over
+			contenedor.ondragleave = leave
+			contenedor.addEventListener('drop', drop) // contenedor.ondrop = drop
+
+			idContenedor.ondrop = iniciar
+			inicio.ondragover = () => event.preventDefault
+
+			function start() {
+				event.target.style.opacity = '0.2'
+			}
+			function end() {
+				event.target.style.opacity = '1'
+			}
+			function over(event) {
+				event.target.style.border = '2px solid green'
+				event.preventDefault()
+			}
+			function leave(event) {
+				event.target.style.border = 'none'
+			}
+			function drop(event) {
+				// event.target.style.borderRadius = '50%'
+				event.target.appendChild(arrastra)
+				console.log(event.target)
+				event.target.style.border = 'none'
+			}
+		</script>
+	</body>
+</html>

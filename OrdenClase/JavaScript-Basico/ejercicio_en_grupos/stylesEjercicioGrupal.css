@@ -1,0 +1,249 @@
+/* INDEX */
+
+#encabezado {
+	margin-top: 1rem;
+	align-items: center;
+	/* align-content: center; */
+	/* background-color: aqua; */
+}
+
+#encabezado p {
+	background-image: url('../storage/beige2.jpg');
+	background-size: contain;
+	height: 30vh;
+	width: 100%;
+	font-weight: bold;
+	text-align: center;
+	color: rgb(228, 226, 226);
+	padding: 0.5rem;
+	transition: 0.5s;
+	font-size: 3rem;
+	line-height: 100px;
+	/* box-sizing: content-box; */
+	/* border: 5px solid black; */
+	/* width: 30%; */
+	/* border-radius: 20px; */
+	/* position: relative; */
+}
+#encabezado p:hover {
+	background-image: url('../storage/beige1.jpg');
+	color: rgb(88, 87, 87);
+	/* transition: 0.7s; */
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+	scroll-behavior: smooth;
+	font-family: 'Courier New', Courier, monospace;
+	background-color: rgba(116, 93, 70, 0.3);
+}
+
+#columnas {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	/* grid-gap: 20px; */
+	/* margin: 20vh; */
+}
+
+.contenedor {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin-top: 2rem;
+}
+
+.contenido {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 3rem;
+}
+iframe {
+	border-radius: 5%;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+	transition: 1s;
+}
+iframe:hover {
+	transform: scale(1.1);
+}
+/* @media (max-width: 700px) {
+	#columnas {
+		grid-template-columns: 1fr;
+		height: fit-content;
+	}
+} */
+
+@media (max-width: 1090px) {
+	#columnas {
+		transition: 2s;
+		grid-template-columns: 1fr;
+		height: fit-content;
+	}
+	.contenedor {
+		grid-template-columns: 1fr;
+	}
+}
+
+.columna {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 1;
+	margin: 10vh;
+	/* justify-content: space-between; */
+}
+
+#columnas img {
+	height: 250px;
+	width: 250px;
+	object-fit: contain;
+	align-items: center;
+}
+
+button {
+	width: 100px;
+	height: 50px;
+	background-color: rgba(165, 97, 42, 0.6);
+	color: aliceblue;
+	border-radius: 10%;
+}
+
+h1,
+h2,
+h3 {
+	color: rgba(116, 93, 70, 1);
+	text-shadow: 2px 2px 2px #b9b2b2;
+	text-align: center;
+}
+
+p {
+	/* height: 30vh; */
+	text-align: justify;
+}
+
+/* FIN INDEX */
+
+/** FOOTER **/
+
+.contenedorfooter {
+	width: 100%;
+	color: #ffffff;
+	font-size: 0.9em;
+	text-align: center;
+	align-items: center;
+	margin-top: 5rem;
+	bottom: 0;
+	/* position: ; */
+}
+
+.pieColum1 {
+	float: left;
+	width: 50%;
+	background-color: rgb(99, 88, 88);
+	height: 100px;
+	line-height: 38px;
+}
+
+.pieColum2 {
+	float: left;
+	width: 50%;
+	background-color: rgb(143, 125, 125);
+	height: 100px;
+	line-height: 120px;
+}
+
+.pieColum3 {
+	clear: both;
+	width: 100%;
+	background-color: rgb(75, 74, 74);
+	height: 100px;
+	line-height: 100px;
+}
+
+.iconosPie {
+	border: 2px solid white;
+	border-radius: 20px;
+	padding: 5px;
+	color: rgb(253, 253, 253);
+	background-color: rgb(75, 74, 74);
+}
+
+.iconosPie:hover {
+	background-color: rgb(128, 127, 127);
+}
+
+.button_pie {
+	width: 100px;
+	height: 35px;
+	background-color: rgba(165, 97, 42, 0.6);
+	color: aliceblue;
+	border-radius: 10%;
+}
+
+.button_pie:hover {
+	background-color: rgba(187, 149, 119, 0.6);
+}
+
+/** FIN FOOTER **/
+
+/* ** Reset ** */
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+
+*,
+*::after,
+::before {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+/* / ** Menu ** */
+.header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	padding: 1rem;
+	width: 100%;
+	height: 4rem;
+	background-color: rgb(99, 88, 88);
+}
+
+/* > indica el primer hijo .container */
+/* >* seria todos los hijos */
+.header > .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo a {
+	color: white;
+	font-weight: bold;
+	font-size: 2rem;
+	text-decoration: none;
+}
+
+.menu a {
+	padding: 1rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	transition: 0.5s;
+}
+
+.menu a:hover {
+	background-color: rgb(128, 127, 127);
+	border-radius: 10px;
+	transform: rotate(10deg);
+}

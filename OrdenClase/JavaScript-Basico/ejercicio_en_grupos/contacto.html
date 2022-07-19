@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contacto</title>
+		<link rel="stylesheet" href="contacto_style.css" />
+		<link rel="stylesheet" href="stylesEjercicioGrupal.css" />
+		<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		<header class="header">
+			<section class="container">
+				<div class="logo">
+					<a href="index-ejercicioGrupal.html">Recursos4Life</a>
+				</div>
+				<nav class="menu">
+					<a href="index-ejercicioGrupal.html">Home</a>
+					<a href="html.html">HTML</a>
+					<a href="css.html">CSS</a>
+					<a href="javaScript.html">JS</a>
+					<a href="contacto.html">Contacto</a>
+				</nav>
+			</section>
+		</header>
+		<div>
+			<h1 class="titulo_contacto">¡Contacta con nosotros!</h1>
+		</div>
+		<div class="contacto">
+			<div class="contacto_col">
+				<p class="contenido_contacto">
+					<span style="font-weight: bold">
+						Si tienes alguna pregunta acerca de nuestros recursos o tienes alguno que quisieras compartir con nosotros, por favor rellena el siguiente
+						formulario y en breve nos pondremos en contacto contigo. </span
+					><br /><br /><br />
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci similique dicta at quae, id omnis? Tenetur quam illo adipisci sit iure
+					ex, id culpa ratione quod, dolore expedita sint repellat? Id repudiandae natus autem, quia, rerum voluptate suscipit nisi corporis dicta,
+					consequuntur ab esse veniam. Unde, esse laudantium delectus molestiae dolore facilis libero perspiciatis tempora fugiat ducimus numquam
+					incidunt. Quam. Recusandae soluta fugit doloremque asperiores quae exercitationem necessitatibus repellendus distinctio omnis similique
+					magni, adipisci sit! Rerum molestiae consectetur aspernatur, ipsum expedita vitae natus est possimus? Suscipit, officiis? Aliquam, saepe
+					voluptate! Officiis voluptas vero sequi necessitatibus facilis, perspiciatis consectetur esse? <br />
+					Quaerat animi nemo voluptatibus possimus tenetur. Nobis mollitia amet consectetur. Reiciendis vitae voluptatem perferendis, modi pariatur
+					tempore consequuntur autem totam ex! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci similique dicta at quae, id omnis?
+					Tenetur quam illo adipisci sit iure ex, id culpa ratione quod, dolore expedita sint repellat? Id repudiandae natus autem, quia, rerum <br />
+					voluptate suscipit nisi corporis dicta, consequuntur ab esse veniam. Unde, esse laudantium delectus molestiae dolore facilis libero
+					perspiciatis tempora fugiat ducimus numquam incidunt. Quam. Recusandae soluta fugit doloremque asperiores quae exercitationem necessitatibus
+					repellendus distinctio omnis similique magni, adipisci sit! Rerum molestiae consectetur aspernatur, ipsum expedita vitae natus est possimus?
+					<br />
+					Suscipit, officiis? Aliquam, saepe voluptate! Officiis voluptas vero sequi necessitatibus facilis, perspiciatis consectetur esse? Quaerat
+					animi nemo voluptatibus possimus tenetur. Nobis mollitia amet consectetur. Reiciendis vitae voluptatem perferendis, modi pariatur tempore
+					consequuntur autem totam ex! Suscipit, officiis? Aliquam, saepe voluptate! Officiis voluptas vero sequi necessitatibus facilis, perspiciatis
+					consectetur esse? Quaerat animi nemo voluptatibus possimus tenetur. Nobis mollitia amet consectetur. Reiciendis vitae voluptatem
+					perferendis, modi pariatur tempore consequuntur autem totam ex!
+				</p>
+			</div>
+			<div class="contacto_col" class="contacto_form">
+				<form id="formulario">
+					<h2>Env&iacute;anos un mensaje</h2>
+					<fieldset>
+						<label for="userName">Nombre:</label><br />
+						<input type="text" name="nombre" id="userName" required="required" minlength="3" maxlength="20" /><br />
+
+						<label for="userEmail">Email:</label><br />
+						<input type="email" name="email" id="userEmail" /><br />
+
+						<label for="userTelf">Telefono:</label><br />
+						<input type="tel" name="telefono" id="userTelf" pattern="[6-7]{1}[0-9]{8}" title="Debe tener 9 digitos" /><br />
+
+						<label for="userMessage">Mensaje:</label><br />
+						<textarea name="mensaje" id="userMessage" cols="30" rows="10"></textarea><br />
+					</fieldset>
+
+					<div>
+						<button id="enviar" type="submit" onclick="envioCorrecto()" class="boton_enviar">Enviar</button>
+						<!-- <input id="enviar" type="submit" value="Enviar" onclick="envioCorrecto()" /> -->
+					</div>
+				</form>
+			</div>
+		</div>
+		<br /><br />
+
+		<footer class="grid-item">
+			<div class="contenedorfooter">
+				<div class="pieColum1">
+					<em>Subscríbete a nuestra Newsletter</em><br />
+					<button class="button_pie">Subscribirse</button>
+				</div>
+				<div class="pieColum2">
+					<a class="" href="#!"><i class="fab fa-facebook fa-2x iconosPie"></i></a>
+					<a class="" href="#!"><i class="fab fa-twitter fa-2x iconosPie"></i></a>
+					<a class="" href="#!"><i class="fab fa-instagram fa-2x iconosPie"></i></a>
+					<a class="" href="#!"><i class="fab fa-youtube fa-2x iconosPie"></i></a>
+				</div>
+				<div class="pieColum3"><em>Copyright© - Todos los derechos reservados</em><br /></div>
+			</div>
+		</footer>
+		<script src="suscribir.js"></script>
+	</body>
+
+	<script>
+		function envioCorrecto() {
+			alert('Gracias, ' + formulario.nombre.value + ' por dejarnos un mensaje.')
+		}
+	</script>
+</html>
