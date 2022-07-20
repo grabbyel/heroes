@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="worker1">
+			<p><output id="resultado1"></output></p>
+			<button onclick="arrancarWorker1()">Arrancar</button>
+			<button onclick="pararWorker1()">Parar</button>
+			<button onclick="reiniciar1()">Reiniciar</button>
+		</div>
+		<div id="worker2">
+			<p><output id="resultado2"></output></p>
+			<button onclick="arrancarWorker2()">Arrancar</button>
+			<button onclick="pararWorker2()">Parar</button>
+			<button onclick="reiniciar2()">Reiniciar</button>
+		</div>
+
+		<script>
+			let worker1
+			let worker2
+
+			function arrancarWorker1() {
+				if (typeof worker1 == 'undefined') {
+					//creamos el worker
+					worker1 = new Worker('./js/tarea1.js')
+
+					//Tomar el valor almacenado y se lo pasamos a la tarea
+					if (localStorage.numero1 != undefined) worker1.postMessage(localStorage.numero1)
+
+					//Escuchar los mensajes recibidos
+					worker1.onmessage = (e) => {
+						resultado1.innerHTML = `Hola ${e.data} desde Tarea 1`
+						localStorage.numero1 = e.data // Aquí es donde guardamos en el navegador
+					}
+				}
+			}
+			function pararWorker1() {
+				//finalizar el worker
+				if (worker1 == undefined) console.log('No hay worker, apañao')
+				worker1.terminate()
+				//Eliminar el worker
+				worker1 = undefined
+			}
+			function reiniciar1() {
+				localStorage.numero1 = 0
+				resultado1.innerText = 'Empezamos desde 0'
+			}
+
+			function arrancarWorker2() {
+				if (typeof worker2 == 'undefined') {
+					//creamos el worker
+					worker2 = new Worker('./js/tarea2.js')
+
+					//Tomar el valor almacenado y se lo pasamos a la tarea
+					if (localStorage.numero2 != undefined) worker2.postMessage(localStorage.numero2)
+
+					//Escuchar los mensajes recibidos
+					worker2.onmessage = (e) => {
+						resultado2.innerHTML = `Hola ${e.data} desde Tarea 2`
+						localStorage.numero2 = e.data // Aquí es donde guardamos en el navegador
+					}
+				}
+			}
+
+			function pararWorker2() {
+				//finalizar el worker
+				if (worker2 == undefined) console.log('No hay worker, apañao')
+				worker2.terminate()
+				//Eliminar el worker
+				worker2 = undefined
+			}
+			function reiniciar2() {
+				localStorage.numero2 = 3
+				resultado2.innerText = 'Empezamos desde 3'
+			}
+		</script>
+	</body>
+</html>
