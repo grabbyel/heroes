@@ -34,6 +34,7 @@
 
 					//Escuchar los mensajes recibidos
 					worker1.onmessage = (e) => {
+						// onmessage quiere decir cuando recibe algo de la tarea
 						resultado1.innerHTML = `Hola ${e.data} desde Tarea 1`
 						localStorage.numero1 = e.data // Aquí es donde guardamos en el navegador
 					}
@@ -66,7 +67,6 @@
 					}
 				}
 			}
-
 			function pararWorker2() {
 				//finalizar el worker
 				if (worker2 == undefined) console.log('No hay worker, apañao')

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Clases-Objetos</title>
+	</head>
+	<body>
+		<script src="alumno.js"></script>
+		<script src="direccion.js"></script>
+		<script>
+			let alumno1 = new Alumno()
+			alumno1.nombre = 'María'
+			alumno1.apellido = 'Perez'
+			alumno1.nota = 8.25
+
+			let alumno2 = new Alumno()
+			alumno2.nombre = 'Juan'
+			alumno2.apellido = 'Lopez'
+			alumno2.nota = 9.5
+
+			console.log(alumno1)
+			console.log(alumno2)
+
+			document.write(alumno1.mostrarInfo())
+			document.write(alumno2.mostrarInfo())
+
+			let alumno3 = new Alumno('Lucas', 'Sanchez', 3.5)
+
+			document.write(alumno3.mostrarInfo())
+
+			let direccion1 = new Direccion('Medusa', 7, 'Balerma, El Ejido')
+			document.write(direccion1.mostrarInfo())
+
+			//Composición de objetos
+			let dir1 = new Direccion('gladiolos', 3, 'El Ejido')
+			let alumno4 = new Alumno('gabriel', 'galdeano', 10, dir1)
+
+			document.write(alumno4.mostrarInfo())
+
+			let alumno5 = new Alumno('Federico', 'Fernández', 5.9, new Direccion('Mayor', 5, 'Almería'))
+			document.write(alumno5.mostrarInfo())
+
+			//Acceso a los recursos del objeto
+			alumno3.nota = 5
+			document.write(alumno3.mostrarInfo())
+
+			// Elena cambia de direccion a Gran Via
+			alumno4.direccion.calle = 'Gran Via'
+			alumno4.direccion.numero = 37
+
+			document.write(alumno4.mostrarInfo())
+		</script>
+	</body>
+</html>
