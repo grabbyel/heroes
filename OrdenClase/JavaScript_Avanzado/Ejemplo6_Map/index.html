@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Maps</title>
+	</head>
+	<body>
+		<script>
+			/**
+			 * Map => colecciones donde los elementos se almacenan key---value
+			 * Son iterables
+			 * Las claves (key) no se pueden repetir, los value si
+			 */
+
+			// Creamos el mapa
+			let mapa = new Map()
+
+			//Agregar elementos al mapa
+			mapa.set('Pera', 1.19)
+			mapa.set('Melon', 2.19)
+			mapa.set('Naranja', 1.79)
+			mapa.set('Sandia', 0.19)
+			mapa.set('Aguacate', 1.19)
+
+			// Qué pasa si repito una clave?
+			mapa.set('Aguacate', 1.29) // Si el valor cambia, se SOBREESCRIBE
+
+			console.log(mapa)
+
+			//Recuperar un elemento
+			console.log(`cuantas frutas tengo` + mapa.size)
+
+			//metodos útiles
+			for (let fruta of mapa.keys()) document.write(fruta + '<br/>')
+
+			for (let precio of mapa.values()) document.write(precio + '<br/>')
+
+			//Mostrar los elementos por pares key => value
+			for (let [clave, valor] of mapa.entries()) document.write(`<br/>Fruta : ${clave}    Precio: ${valor}<br/>`)
+		</script>
+	</body>
+</html>

@@ -6,5 +6,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 	</head>
-	<body></body>
+	<body>
+		<script src="fecha.js"></script>
+		<script src="fecha_encapsulada.js"></script>
+		<script>
+			let fecha1 = new Fecha(21, 7, 2022)
+			document.write(fecha1.mostrarFecha())
+
+			let fecha2 = new Fecha()
+			fecha2.dia = 21
+			fecha2.mes = 7
+			fecha2.anio = 2022
+			document.write(fecha2.mostrarFecha())
+
+			let fecha3 = new FechaEncapsulada(21, 15, 2022)
+			document.write(fecha3.mostrarFecha())
+		</script>
+	</body>
 </html>

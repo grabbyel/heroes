@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// Set => Son colecciones dinámicas, son iterables
+			// No admiten elementos repetidos ( Si detecta cuando introduces nuevo ejemplo, que ya hay uno igual, no lo genera de nuevo)
+
+			let conjunto = new Set()
+
+			conjunto.add('Juan')
+			conjunto.add('Marcos')
+			conjunto.add('Gabriel')
+			conjunto.add('Chuleta')
+			conjunto.add('Astigarraga')
+			conjunto.add('Gabriel')
+			conjunto.add('Gabriel')
+			conjunto.add('Gabriel')
+			conjunto.add('Gabriel')
+
+			console.log(conjunto)
+
+			//Metodos interesantes de la clase set
+			//Tamaño
+			console.log(`Cuantos elementos hay?? hay ${conjunto.size} elementos`)
+
+			//Comprobar si ya existe un valor
+			console.log(`está el valor Gabriel?? hay ${conjunto.has('Gabriel')} elementos`)
+
+			// Borrar un elemento
+			console.log(`Con Gabriel:`)
+			console.log(conjunto)
+			console.log(` Sin gabriel:`)
+			conjunto.delete('Gabriel')
+			console.log(conjunto)
+		</script>
+	</body>
+</html>

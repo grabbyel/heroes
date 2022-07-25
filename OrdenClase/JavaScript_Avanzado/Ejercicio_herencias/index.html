@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="js/persona.js"></script>
+		<script src="js/empleado.js"></script>
+		<script src="js/jefe.js"></script>
+	</head>
+	<body>
+		<script>
+			/**
+			 * crear una persona
+			 * crear un empleado
+			 * crear un jefe
+			 * mostrar los datos de cada uno de ellos
+			 */
+			document.write('+++++++++++++++JEFE+++++++++++++++<br/>')
+			let jefazo = new Jefe('Gabri', 38, 'siempre que puedo', '-200€', 'playa', '1234')
+			document.write(jefazo.mostrarDetalle())
+
+			document.write('+++++++++++++++PERSONA+++++++++++++++<br/>')
+
+			let personilla = new Persona('Gabri', 38, 'siempre que puedo')
+			document.write(personilla.mostrarDetalle())
+
+			document.write('+++++++++++++++EMPLEADO+++++++++++++++<br/>')
+
+			let currante = new Empleado('Gabri', 38, 'siempre que puedo', '-200€')
+			document.write(currante.mostrarDetalle())
+		</script>
+	</body>
+</html>
