@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DE 5 EN 5</title>
+	</head>
+    <label for="veces">Cuántos resultados quieres?</label>
+    <input type="text" id="veces" placeholder="número de resultados...">
+    <button type="submit"  id="enviar">Enviar</button>
+    <button type="reset"  id="clear">Limpiar</button>
+    <div id="resultado"></div>
+		<script>
+			//Definir el generador
+            function series(valor){
+
+                let num = 5
+                function* miGenerador() {
+                    yield num
+                    while (true) {
+                        yield (num += 5)
+                    }
+                }
+
+                let cont = 1
+                function* miCont() {
+                    while (true) {
+                        yield cont++
+                    }
+                }
+
+                // Crear el generador
+                let generador = miGenerador()
+                let contador = miCont()
+
+                let veces = valor
+
+                for (let i = 0; i < veces; i++) {
+                    let texto = document.createElement('p')
+                    texto.innerText = `En el paso ${contador.next().value} tenemos el número : ${generador.next().value}`
+                    resultado.appendChild(texto)
+                }
+            }
+
+            document.addEventListener('click', (e) =>{
+                (e.target.matches('#enviar')) ? series(veces.value) : console.log(`Click en ${e.target.id}`)
+                if(e.target.matches('#clear'))  {
+                    resultado.innerHTML = '<p style ="text-align: center; color: red; text-size: 2rem">Vuelva a introducir dato</p>'
+                    let intervalo = setInterval(() => {
+                        resultado.innerHTML = ''
+                        clearInterval(intervalo)
+                    }, 3000);
+                } 
+            })
+		</script>
+	</body>
+</html>

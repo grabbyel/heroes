@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Operador de propagación9</title>
+	</head>
+	<body>
+		<script>
+			let nombres = ['juan', 'maria', 'luis', 'laura', 'jorge']
+			console.log(nombres)
+			console.log(...nombres)
+
+			let numero = 4
+			console.log(numero)
+			// console.log(...numero) // Uncaught TypeError: Found non-callable @@iterator
+
+			let animal = 'Perro'
+			console.log(animal)
+			console.log(...animal) // Aquí sí funciona porque un string es un "array de caracteres"
+
+			let mas_nombres = ['Gabriel', 'Pedro', 'Sergio']
+			let arrayNombres = [...nombres, ...mas_nombres]
+			console.log(arrayNombres)
+		</script>
+	</body>
+</html>

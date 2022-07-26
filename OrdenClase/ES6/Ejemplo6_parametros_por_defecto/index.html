@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Parámetros por defecto</title>
+	</head>
+	<body>
+		<script>
+			/**
+			 * Se puede establecer un valor por defecto asignando valor en el momento de enunciar la función
+			 */
+			function detalleEmpleado(nombre, sueldo = 1800, estadoCivil = 'Soltero') {
+				return `Nombre: ${nombre}, Sueldo: ${sueldo} Euros, Estado Civil: felizmente ${estadoCivil}`
+			}
+
+			console.log(detalleEmpleado('Pedro'))
+			console.log(detalleEmpleado('Maria', 3500))
+			console.log(detalleEmpleado('Juana', 3500, 'casada'))
+			console.log(detalleEmpleado('Antonio', 500))
+			console.log(detalleEmpleado('Gabriel', 350000, 'solterísimo'))
+		</script>
+	</body>
+</html>

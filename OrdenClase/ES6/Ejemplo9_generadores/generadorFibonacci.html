@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FIBONACCI</title>
+	</head>
+	<body>
+		<script>
+			//Definir el generador
+			function* miGenerador() {
+				let primero = 0
+				let segundo = 1
+				yield primero
+				yield segundo
+				while (true) {
+					let aux = primero + segundo
+					primero = segundo
+					segundo = aux
+					yield aux++
+				}
+			}
+
+			// Crear el generador
+			let generador = miGenerador()
+
+			for (let i = 1; i < 20; i++) {
+				console.log(generador.next().value)
+			}
+		</script>
+	</body>
+</html>

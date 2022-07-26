@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Numeros primos</title>
+	</head>
+    <form id="sumarCinco">
+        <label for="veces">Cuántos resultados quieres?</label>
+        <input type="text" id="veces" placeholder="número de resultados...">
+        <button type="submit"  id="enviar">Enviar</button>
+    </form>
+        <button type="reset"  id="clear">Limpiar</button>
+    <form id="primo">
+        <label for="numPrimo">Cuántos resultados quieres?</label>
+        <input type="text" id="numPrimo" placeholder="número a evaluar...">
+        <button type="submit"  id="esPrimo">Enviar</button>
+    </form>
+        <div id="resultado"></div>
+		<script>
+			//Definir el generador
+            function series(veces){
+
+                let num = 5
+                function* miGenerador() {
+                    yield num
+                    while (true) {
+                        yield (num += 5)
+                    }
+                }
+
+                let cont = 1
+                function* miCont() {
+                    while (true) {
+                        yield cont++
+                    }
+                }
+
+                // Crear el generador
+                let generador = miGenerador()
+                let contador = miCont()
+
+                for (let i = 0; i < veces; i++) {
+                    let texto = document.createElement('p')
+                    texto.innerText = `En el paso ${contador.next().value} tenemos el número : ${generador.next().value}`
+                    resultado.appendChild(texto)
+                }
+            }
+            
+            const esPrimo = (numero) => {
+                let contadorDivisores = 0
+                for (let i = numero; i > 0; i--) {
+                    if(numero%i == 0)  contadorDivisores++ 
+                }
+                if(contadorDivisores == 2)  return true; else return false
+            }
+            
+            document.addEventListener('click', (e) =>{
+                (e.target.matches('#enviar')) ? series(veces.value) : console.log(`Click en ${e.target.id}`)
+                if(e.target.matches('#clear'))  {
+                    resultado.innerHTML = '<p style ="text-align: center; color: red; text-size: 2rem">Vuelva a introducir dato</p>'
+                    let intervalo = setInterval(() => {
+                        resultado.innerHTML = ''
+                        clearInterval(intervalo)
+                    }, 3000);
+                }
+                if(e.target.matches('esPrimo')) {
+                    (esPrimo(numPrimo.value)) ? resultado.innerHTML = `El número ${numPrimo.value} ES NÚMERO PRIMO` : resultado.innerHTML = `El número ${numPrimo.value} NO es primo`
+                } 
+            })
+		</script>
+	</body>
+</html>

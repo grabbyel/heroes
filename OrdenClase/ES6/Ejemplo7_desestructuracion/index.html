@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Desestructuracion</title>
+		<script src="js/alumno.js"></script>
+	</head>
+	<body>
+		<script>
+			let alumnos = [
+				new Alumno('juan', 'sanchez', 8.3),
+				new Alumno('Maria', 'Lopez', 5.3),
+				new Alumno('Pedro', 'Sanchez', 0.2),
+				new Alumno('Gabri', 'Galdeano', 9.3),
+				new Alumno('Antonio', 'Martínez Ares', 10.3),
+			]
+
+			// Mostrar los alumnos
+			for (let alum of alumnos) {
+				console.log(alum.mostrarInfo())
+				let { nombre, apellido, nota } = alum
+				console.log(`${nombre} ${apellido}: ${nota}`)
+			}
+
+			let array_alumnos = [
+				['juan', 'sanchez', 8.3],
+				['Maria', 'Lopez', 5.3],
+				['Pedro', 'Sanchez', 0.2],
+				['Gabri', 'Galdeano', 9.3],
+				['Antonio', 'Martínez Ares', 10.3],
+			]
+			// Mostrar los alumnos
+			for (let alum of array_alumnos) {
+				let [nombre, apellido, nota] = alum
+
+				let alumno = new Alumno(nombre, apellido, nota)
+				console.log(alumno.mostrarInfo())
+			}
+
+			/**
+			 * Ejemplo de Julen en el que lo que se le pasa por parámetro a la funcion es un objeto, con valores por
+			 * defecto
+			 */
+			function mostrarInfoObj({ nombre, apellido = 'Sanchez', nota = 5.0 }) {
+				return ` Nombre: ${nombre} Apellido: ${apellido} Nota: ${nota}`
+			}
+
+			console.log(mostrarInfoObj({ apellido: 'galdeano' }))
+		</script>
+	</body>
+</html>
