@@ -6,17 +6,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Numeros primos</title>
 	</head>
-    <form id="sumarCinco">
         <label for="veces">Cuántos resultados quieres?</label>
         <input type="text" id="veces" placeholder="número de resultados...">
-        <button type="submit"  id="enviar">Enviar</button>
-    </form>
+        <button id="enviar">Enviar</button>
         <button type="reset"  id="clear">Limpiar</button>
-    <form id="primo">
-        <label for="numPrimo">Cuántos resultados quieres?</label>
+        <label for="numPrimo">Introduce un número y te digo si es primo</label>
         <input type="text" id="numPrimo" placeholder="número a evaluar...">
-        <button type="submit"  id="esPrimo">Enviar</button>
-    </form>
+        <button id="esPrimo">Enviar</button>
         <div id="resultado"></div>
 		<script>
 			//Definir el generador
@@ -48,25 +44,43 @@
                 }
             }
             
+            let arrayDivisores = []
+
             const esPrimo = (numero) => {
-                let contadorDivisores = 0
+                arrayDivisores = []
+                
                 for (let i = numero; i > 0; i--) {
-                    if(numero%i == 0)  contadorDivisores++ 
+                    if(numero%i == 0)  {
+                        arrayDivisores.push(i)
+                    }                    
                 }
-                if(contadorDivisores == 2)  return true; else return false
+                if(arrayDivisores.length == 2)  return true; return false
             }
             
             document.addEventListener('click', (e) =>{
-                (e.target.matches('#enviar')) ? series(veces.value) : console.log(`Click en ${e.target.id}`)
+                if(e.target.matches('#enviar')) {
+                    // e.preventDefault()
+                    series(veces.value)
+                } else console.log(`Click en ${e.target.id}`)
                 if(e.target.matches('#clear'))  {
-                    resultado.innerHTML = '<p style ="text-align: center; color: red; text-size: 2rem">Vuelva a introducir dato</p>'
+                    resultado.innerHTML = '<h1 style ="text-align: center; color: red; text-size: 2rem">Vuelva a introducir dato</h1>'
                     let intervalo = setInterval(() => {
                         resultado.innerHTML = ''
+                        location.reload()
                         clearInterval(intervalo)
                     }, 3000);
                 }
-                if(e.target.matches('esPrimo')) {
-                    (esPrimo(numPrimo.value)) ? resultado.innerHTML = `El número ${numPrimo.value} ES NÚMERO PRIMO` : resultado.innerHTML = `El número ${numPrimo.value} NO es primo`
+                if(e.target.matches('#esPrimo')) {
+                    // e.preventDefault()
+                    console.log(numPrimo.value)
+                    if(esPrimo(numPrimo.value)) { 
+                        resultado.innerHTML = `<h2>El número ${numPrimo.value} <span style="color:red;">ES NÚMERO PRIMO</span><br/></h2>`
+                    } else {
+                        resultado.innerHTML = `<h2>El número ${numPrimo.value} <span style="color:red;">NO es número primo</span><br/></h2>`
+                        arrayDivisores.forEach((divisor ) => {
+                            resultado.innerHTML += `<br/>El número ${divisor} es divisor de ${numPrimo.value}`
+                        })
+                    }
                 } 
             })
 		</script>
