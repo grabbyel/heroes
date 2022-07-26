@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Api chuck norris</title>
+	</head>
+	<body>
+		<label for="algo">Introduzca algo</label>
+		<select name="pokemon" id="pokemonSelect"></select>
+
+		<script>
+			let pokemonApi = 'https://pokeapi.co/api/v2/pokemon'
+			// fetch(pokemonApi)
+			// 	.then((resultado) => {
+			// 		let data = resultado.json()
+			// 		// resultado.json().results.forEach((nombre) => {
+			// 		// 	console.log(nombre)
+			// 		// })
+			// 		console.log(data)
+			// 		return data
+			// 	})
+			// 	.then((data) => {
+			// 		console.log(data)
+			// 		let nombres = data.results.map((pokemon) => {
+			// 			return pokemon.name
+			// 		})
+			// 		// console.log(data.results)
+			// 		console.log(nombres)
+			// 	})
+			// 	.catch((error) => {
+			// 		alert(`Ha ocurrido el error ${error.message}`)
+			// 	})
+			// console.log(pokemonApi)
+
+			const pokeApi = async () => {
+				try {
+					let dato = await fetch(pokemonApi)
+					let nombres = await dato.json()
+					console.log(nombres)
+					let nombresTxt = nombres.results.map((pokemon) => {
+						return pokemon.name
+					})
+					nombresTxt.forEach((element) => {
+						// console.log(element)
+						pokemonSelect.appendChild(new Option(element, element))
+					})
+					// console.log(nombresTxt)
+					console.log(nombres)
+				} catch (error) {
+					alert(`Ha ocurrido el error ${error}`)
+				}
+			}
+			pokeApi()
+
+			const mostrarImg = async (pokemon) => {
+				try {
+					let data = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+					let poke = await data.json()
+					let imagen = document.createElement('img')
+					imagen.src = poke.sprites.back_default
+					console.log(poke.sprites.back_default)
+					console.log(data)
+					document.body.appendChild(imagen)
+					// console.log(pokeId)
+					console.log(imagen)
+					console.log(pokemonSelect.value)
+				} catch (error) {
+					alert(error)
+				}
+			}
+
+			document.addEventListener('change', (e) => {
+				if (e.target.matches('#pokemonSelect')) {
+					// console.log(e.target)
+					mostrarImg(e.target.value)
+				}
+			})
+		</script>
+	</body>
+</html>

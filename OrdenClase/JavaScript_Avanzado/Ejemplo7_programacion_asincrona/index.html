@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Programación asincrona</title>
+	</head>
+	<body>
+		<button onclick="esperar()">Pulsame</button>
+		<!-- <button onclick="mostrarImagen()">Pulsame</button> -->
+
+		<div id="logo"></div>
+		<script>
+			function esperar() {
+				// El alert se interpreta como un callBacik
+				setTimeout(() => {
+					alert('Hemos esperado 2 segundos')
+				}, 2000)
+			}
+
+			//promesas
+			//una promesa es el resultado de una operación asíncrona
+
+			let urlPokemon = 'https://pokeapi.co/api/v2/pokemon/pikachu'
+			let promesa = fetch(urlPokemon)
+			promesa.then((resultado) => console.log(resultado.json()))
+			promesa.catch((error) => console.log(error))
+
+			//otra forma de obtener promesas
+
+			fetch(urlPokemon)
+				.then((resultado) => {
+					console.log(resultado.json())
+				})
+				.catch((error) => {
+					console.log('+++++++++++Opción 2+++++++++++++')
+					console.log(error)
+				})
+
+			//lanzar la petición de forma asíncrona
+			const asincrona = async (url) => {
+				try {
+					let respuesta = await fetch(url)
+					let data = await respuesta.json()
+					console.log(data)
+				} catch (error) {
+					console.log(error)
+				}
+			}
+			asincrona(urlPokemon)
+		</script>
+	</body>
+</html>

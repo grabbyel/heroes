@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio asincronía</title>
+	</head>
+	<body>
+		<script>
+			let imagenUrl = 'https://pbs.twimg.com/profile_images/1410519199651348484/5wIFnWBg_400x400.jpg'
+
+			//lanzar la petición de forma asíncrona
+			const asincrona = async (url) => {
+				try {
+					let respuesta = await fetch(url)
+					let data = respuesta.url
+					let img = document.createElement('img')
+					img.src = respuesta.url
+					document.body.appendChild(img)
+					console.log(data)
+				} catch (error) {
+					console.log(error)
+				}
+			}
+
+			const mostrarImagen = (url) => {
+				fetch(url)
+					.then((resultado) => {
+						let img = document.createElement('img')
+						img.src = resultado.url
+						document.body.appendChild(img)
+						console.log(resultado)
+					})
+					.catch((error) => {
+						alert(`Ha ocurrido el siguiente error ${error}`)
+					})
+			}
+
+			mostrarImagen(imagenUrl)
+			mostrarImagen('https://www.extradigital.es/wp-content/uploads/2019/06/Hiberus.jpg')
+
+			document.write('++++++++++++++++++++<br/>')
+			mostrarImagen(imagenUrl)
+		</script>
+	</body>
+</html>
