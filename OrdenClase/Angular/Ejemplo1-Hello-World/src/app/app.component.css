@@ -1,0 +1,17 @@
+h1 {
+  color: fuchsia;
+}
+
+div {
+  width: 50%;
+  height: 100px;
+  background-color: silver;
+}
+
+.rojo {
+  background-color: red;
+}
+
+.verde {
+  background-color: darkseagreen;
+}

@@ -1,0 +1,18 @@
+td,
+th {
+  border: 2px solid #ddd;
+}
+table {
+  border-collapse: collapse;
+  width: 50%;
+}
+
+.verde {
+  background-color: #00ff00;
+}
+
+.rojo {
+  background-color: #ff0000;
+  font-weight: bold;
+  text-decoration: underline;
+}

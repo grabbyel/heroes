@@ -1,0 +1,19 @@
+<h1>Ejemplos Binding</h1>
+<h2>String interpolation</h2>
+<h2>{{ texto }}</h2>
+Me llamo {{ nombre }} {{ apellidos }} y tengo {{ edad }} años <br />
+{{ "Es mi cumpleaños " + (edad + 1) }}
+
+<h2>Property Binding</h2>
+<button [disabled]="deshabilitado">Pulsame</button>
+
+<h2>Event Binding</h2>
+<button (click)="saludar()">Saludar</button>
+
+<div [class]="estilo" (mouseenter)="estilo = 'rojo'" (mouseleave)="estilo = ''">
+  El color mostrado es {{ estilo }}
+</div>
+
+<h2>Two way Data Binding</h2>
+<input type="text" placeholder="Escribe tu nombre..." [(ngModel)]="nombre" />
+Tu nombre es {{ nombre }} <br />

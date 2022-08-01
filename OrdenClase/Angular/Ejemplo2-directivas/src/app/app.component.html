@@ -1,0 +1,157 @@
+<h2>Directiva de componentes</h2>
+<ul>
+  <li *ngFor="let alum of alumnos">
+    Nombre: {{ alum.nombre }} <br />Apellido: {{ alum.apellido }}<br />Nota
+    {{ alum.nota }}
+  </li>
+</ul>
+<h2>Directiva de componentes</h2>
+<ul>
+  <li *ngFor="let alum of alumnos; index as i">
+    <h3>Alumno número {{ i + 1 }}</h3>
+    Nombre: {{ alum.nombre }} <br />Apellido: {{ alum.apellido }}<br />Nota
+    {{ alum.nota }}
+  </li>
+</ul>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Nota</th>
+    <th>Repetidor</th>
+  </tr>
+  <tr
+    *ngFor="let alum of alumnos"
+    [ngClass]="alum.nota >= 5 ? 'verde' : 'rojo'"
+  >
+    <td>{{ alum.nombre }}</td>
+    <td>{{ alum.apellido }}</td>
+    <td>{{ alum.nota }}</td>
+    <td *ngIf="alum.repetidor">Si</td>
+  </tr>
+</table>
+<!-- 
+NO SE PUEDEN TENER DOS DIRECTIVAS ESTRUCTURALES EN LA MISMA ETIQUETA -->
+<h2>Directiva ngIf - Mostrar sólo los alumnos aprobados</h2>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Nota</th>
+  </tr>
+  <ng-container *ngFor="let alum of alumnos">
+    <tr *ngIf="alum.nota >= 5">
+      <td>{{ alum.nombre }}</td>
+      <td>{{ alum.apellido }}</td>
+      <td>{{ alum.nota }}</td>
+    </tr>
+  </ng-container>
+</table>
+
+<h2>Mostrar suspensos</h2>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Nota</th>
+  </tr>
+  <ng-container *ngFor="let alum of alumnos">
+    <tr *ngIf="alum.nota < 5">
+      <td>{{ alum.nombre }}</td>
+      <td>{{ alum.apellido }}</td>
+      <td>{{ alum.nota }}</td>
+    </tr>
+  </ng-container>
+</table>
+
+<h2>mostrar los repetidores</h2>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Nota</th>
+  </tr>
+  <ng-container *ngFor="let alum of alumnos">
+    <tr *ngIf="alum.repetidor">
+      <td>{{ alum.nombre }}</td>
+      <td>{{ alum.apellido }}</td>
+      <td>{{ alum.nota }}</td>
+    </tr>
+  </ng-container>
+</table>
+
+<h2>mostrar los no repetidores</h2>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Nota</th>
+  </tr>
+  <ng-container *ngFor="let alum of alumnos">
+    <tr *ngIf="!alum.repetidor">
+      <td>{{ alum.nombre }}</td>
+      <td>{{ alum.apellido }}</td>
+      <td>{{ alum.nota }}</td>
+    </tr>
+  </ng-container>
+</table>
+
+<h2>mostrar los suspensos&&repetidores</h2>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Nota</th>
+    <th>Repetidor</th>
+  </tr>
+  <ng-container *ngFor="let alum of alumnos">
+    <tr *ngIf="alum.repetidor == true && alum.nota < 5">
+      <td>{{ alum.nombre }}</td>
+      <td>{{ alum.apellido }}</td>
+      <td>{{ alum.nota }}</td>
+      <td *ngIf="alum.repetidor">Si</td>
+    </tr>
+  </ng-container>
+</table>
+
+<h2>Directiva ngStyle - Verde los aprobados y rojo los suspensos</h2>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Nota</th>
+    <th>Repetidor</th>
+  </tr>
+  <tr *ngFor="let alum of alumnos">
+    <td>{{ alum.nombre }}</td>
+    <td>{{ alum.apellido }}</td>
+    <td>
+      {{ alum.nota }}
+    </td>
+    <td *ngIf="alum.repetidor">Si</td>
+  </tr>
+</table>
+
+<h2>Directiva ngClass</h2>
+<ul>
+  <li
+    *ngFor="let alum of alumnos"
+    [ngClass]="{ verde: alum.nota >= 5, rojo: alum.nota < 5 }"
+  >
+    {{ alum.nombre }}{{ alum.apellido }}{{ alum.nota }}
+  </li>
+</ul>
+<ul>
+  <li
+    *ngFor="let alum of alumnos"
+    [ngClass]="alum.nota >= 5 ? 'verde' : 'rojo'"
+  >
+    {{ alum.nombre }}{{ alum.apellido }}{{ alum.nota }}
+  </li>
+</ul>
