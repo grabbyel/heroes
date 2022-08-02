@@ -1,0 +1,14 @@
+h1 {
+  color: red;
+}
+
+nav {
+  background-color: darkolivegreen;
+  color: white;
+  width: fit-content;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

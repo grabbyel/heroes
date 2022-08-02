@@ -155,3 +155,37 @@ NO SE PUEDEN TENER DOS DIRECTIVAS ESTRUCTURALES EN LA MISMA ETIQUETA -->
     {{ alum.nombre }}{{ alum.apellido }}{{ alum.nota }}
   </li>
 </ul>
+
+<h2>Directiva ngSwitch y ngSwitchCase</h2>
+<ul>
+  <li *ngFor="let alum of alumnos" [ngSwitch]="alum.valoracion">
+    <div *ngSwitchCase="'alta'" [ngStyle]="{ backgroundColor: 'green' }">
+      {{ alum.nombre }}{{ alum.apellido }}{{ alum.nota }}
+    </div>
+    <div *ngSwitchCase="'media'" [ngStyle]="{ backgroundColor: 'orange' }">
+      {{ alum.nombre }}{{ alum.apellido }}{{ alum.nota }}
+    </div>
+    <div *ngSwitchCase="'baja'" [ngStyle]="{ backgroundColor: 'red' }">
+      {{ alum.nombre }}{{ alum.apellido }}{{ alum.nota }}
+    </div>
+    <div *ngSwitchDefault>
+      {{ alum.nombre }}{{ alum.apellido }}{{ alum.nota }}
+    </div>
+  </li>
+</ul>
+
+<h2>Directiva personalizada</h2>
+<ul>
+  <li *ngFor="let alum of alumnos" [appNota]="alum"></li>
+</ul>
+<h2>EJERCICIO - Directiva personalizada</h2>
+<ul>
+  <li *ngFor="let alum of alumnos" [appPintar]="alum"></li>
+</ul>
+
+<h2>Directiva personalizada Resaltar alumnos según clicks</h2>
+<ul>
+  <li *ngFor="let alum of alumnos">
+    <a appContarClicks>{{ alum.nombre }}</a>
+  </li>
+</ul>
