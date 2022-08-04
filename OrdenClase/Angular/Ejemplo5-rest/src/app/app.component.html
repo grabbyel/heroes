@@ -1,0 +1,7 @@
+<h1>Todos los pokemosn</h1>
+<ul>
+  <li *ngFor="let pokemon of pokemons">{{ pokemon.name }}</li>
+</ul>
+
+<h2>Busca tu pokemon</h2>
+<input type="text" [(ngModel)]="nombre" placeholder="puto nombre...." />

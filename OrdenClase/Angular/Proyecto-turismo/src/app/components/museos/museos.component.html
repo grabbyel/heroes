@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let museo of museos">
+    <a
+      routerLink="/museo_detalle/{{ museo.id }}"
+      style="text-decoration: none; color: brown"
+      >{{ museo.nombre }}</a
+    >
+  </li>
+</ul>
