@@ -5,3 +5,16 @@
 
 <h2>Busca tu pokemon</h2>
 <input type="text" [(ngModel)]="nombre" placeholder="puto nombre...." />
+<button (click)="buscarPokemon()">Buscar</button>
+<div *ngIf="pokemon != null">
+  <h2>Datos del pokemon {{ pokemon.name }}</h2>
+  <li>Peso: {{ pokemon.weight }}</li>
+  <li>Altura {{ pokemon.height }}</li>
+  <li>Habilidades:</li>
+  <ol>
+    <li *ngFor="let habilidad of pokemon.abilities">
+      {{ habilidad.ability.name }}
+      <a href="{{ habilidad.ability.url }}">Detalles</a>
+    </li>
+  </ol>
+</div>

@@ -17,4 +17,7 @@ export class PokemonService {
   getAll(): Observable<any> {
     return this.http.get(this.url, { headers: this.cabeceras });
   }
+  buscar(nombre: string): Observable<any> {
+    return this.http.get(this.url + '/' + nombre, { headers: this.cabeceras });
+  }
 }
