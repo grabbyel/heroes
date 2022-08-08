@@ -20,8 +20,21 @@
 </div>
 
 <h1>Dar alta a un amigo</h1>
-<label>Nombre </label>
-<input type="text" [(ngModel)]="nombre" />
-<label>Teléfono</label>
-<input type="text" [(ngModel)]="telefono" />
-<button (click)="alta()">Agregar Contacto</button>
+<form [formGroup]="amigoForm">
+  <label>Nombre </label>
+  <input type="text" formControlName="nombre" />
+
+  <!-- Para que no de error hemos de añadir en tsconfig.json la fropiedad '"strictNullChecks": false' -->
+  <label>Teléfono</label>
+  <input type="text" formControlName="telefono" />
+  <button [disabled]="!amigoForm.valid" (click)="alta()">
+    Agregar Contacto
+  </button>
+  <div *ngIf="nombre.errors?.['minlength']" [ngStyle]="{ color: 'red' }">
+    * Longitud mínima 3 caracteres
+  </div>
+  <div *ngIf="telefono.errors?.['pattern']">
+    * Debe tener 9 dígitos y comenzar por 7 ó 6
+  </div>
+  <div *ngIf="telefono.errors?.['required']">* campo requerido</div>
+</form>
